@@ -1,0 +1,502 @@
+$break-small: 680px;
+
+
+
+
+/* ==========================================================================
+   Base Styles, Bootstrap Modifications & Fonts Import
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+  color: #222;
+}
+
+::-moz-selection {
+  background: #f2c2c9;
+  color: #a4003a;
+  text-shadow: none;
+}
+
+::selection {
+  background: #16a085;
+  color: #a4003a;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.centered {
+  text-align: center;
+}
+
+
+/* ==========================================================================
+   General styles
+   ========================================================================== */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   MENU CONFIGURATION
+   ========================================================================== */
+
+$navicon-size : 7rem;
+
+@mixin line {
+  right: 0;
+  display: inline-block;
+  width: $navicon-size;
+  height: $navicon-size/7;
+  background-color: #ff3850;
+  user-select: none;
+  border-radius: $navicon-size/14;
+  transition: .75s;
+}
+
+.navbar{
+  z-index: 2;
+  border: none;
+  border-radius: none;
+  min-height: 90px;
+  background-color: transparent;
+}
+
+.navicon-button {
+  display: inline-block;
+  position: absolute;
+  padding: $navicon-size/2.45 $navicon-size/50;
+  transition: .75s;
+  cursor: pointer;
+  background: transparent;
+  top: $navicon-size/25;
+  right: $navicon-size*3.1;
+
+  &:hover {
+
+    .navicon:before { top: -($navicon-size/3.5); }
+    .navicon:after { top: $navicon-size/3.5; }}}
+
+.navicon {
+  @include line;
+  position: relative;
+  //top: $navicon-size/14;
+  //right: $navicon-size/2;
+
+  &:before, &:after {
+    @include line;
+    position: absolute;
+    content: '';
+    transform-origin: 88% center;
+  }
+  &:before { top: -($navicon-size/3.25); background-color: #4285f4; }
+  &:after { top: $navicon-size/3.25; background-color: #35c54a; }
+}
+
+
+.open.navicon-button {
+  transform: scale3d(.85,.85,.85);
+
+  .navicon:before, .navicon:after {
+    top: 0;
+    right: 0;
+    width: $navicon-size/1.8;
+  }
+
+  .navicon:before { transform: rotate3d(0,0,1,-35deg); }
+  .navicon:after { transform: rotate3d(0,0,1,35deg); }
+}
+
+
+.menu {
+  position: fixed;
+  right: -200px;
+  width: 260px;
+  height: 100%;
+  top: 0;
+  z-index: 15;
+  text-align: left;
+}
+
+.menu.menu-open {
+  right: 0;
+}
+
+.menu-wrap {
+  position: absolute;
+  top: 0;
+  left: 60px;
+  background: linear-gradient(90deg, white, gray);
+  width: 200px;
+  height: 100%;
+}
+
+.menu h1.logo a:hover {
+  color: #f85c37;
+}
+
+.menu img.logo {
+  margin: 20px 0;
+  max-width: 160px;
+}
+
+.menu h1 {
+  margin-left: 20px;
+  color: darkslategray;
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.menu-close {
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  font-size: 14px;
+  color: darkslategray;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  top: 20px;
+  right: 0px;
+  -webkit-transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  -o-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+}
+
+.menu-close:hover {
+  color: #ffffff;
+  -webkit-transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  -o-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+}
+
+/* Push the body after clicking the menu button */
+.body-push {
+  overflow-x: hidden;
+  position: relative;
+  left: 0;
+}
+
+.body-push-toright {
+  left: 200px;
+}
+
+.body-push-toleft {
+  left: -200px;
+}
+
+.menu,
+.body-push {
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+#menuToggle {
+  z-index: 11;
+  cursor: pointer;
+  -webkit-transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  -o-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+}
+
+#menuToggle:hover {
+  -webkit-transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  -o-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+}
+
+
+/* ==========================================================================
+   Background
+   ========================================================================== */
+
+#googlemaps {
+  height: 100%;
+  width: 100%;
+  position:absolute;
+  top: 0;
+  left: 0;
+  z-index: 0; /* Set z-index to 0 as it will be on a layer below the contact form */
+}
+
+/* ==========================================================================
+   Foreground
+   ========================================================================== */
+
+.login{
+  margin:7px;
+  border-radius: 0;
+}
+
+/* Alternate non-bootstap version of container :) */
+
+
+#element{
+  z-index: 1;
+}
+
+#form{
+  position:relative;
+}
+
+#headerwrap img{
+  display: block;
+  width: 85%;
+  padding: 5px;
+  margin: 20px auto;
+}
+
+#search_bar{
+  width: 100%;
+  button{
+    border-color: #ddd;
+    &:hover{
+      border-color: #ddd;
+    }
+  }
+  .customBtn{
+    padding: 5px 10px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    outline: inherit;
+    &:active{
+      background-color: #ddd;
+      outline: none;
+      border: none;
+    }
+  }
+  border-radius: 20px;
+  box-shadow: 0 0 8px 1px darkgrey;
+}
+ .dropdown-menu{
+   background: none;
+   border: none;
+   box-shadow: none;
+   min-width: 25px;
+   &>li>a{
+     margin-bottom: 5px;
+     padding: 8px 10px;
+     color: #fff;
+     box-shadow: 0 0 5px 1px darkgrey;
+   }
+ }
+
+.height45{
+  height:49px;
+}
+
+#search{
+
+  z-index: 5;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  @media screen and (max-width: $break-small) {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #333;
+  }
+  &::-moz-placeholder { /* Firefox 19+ */
+    color: #333;
+  }
+}
+
+.fa-search{
+  z-index: 5;
+  padding: 15px;
+  position: absolute;
+  color: #4285f4;
+  top: 0;
+  right: 5px;
+}
+
+
+  /* ==========================================================================
+     Footer
+     ========================================================================== */
+
+#footer {
+  position: absolute;
+  text-align: center;
+  font-size: 14px;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  background: linear-gradient(90deg, white, gray);
+  padding: 10px;
+  box-shadow: 0 0 5px 1px darkgrey;
+}
+
+/* ==========================================================================
+   Modal
+   ========================================================================== */
+
+.modal-dialog {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.modal-header{
+  border: none;
+  .close{
+    font-size: 30px;
+  }
+}
+.modal-content {
+  height: auto;
+  min-height: 100%;
+  border-radius: 0;
+  border: none;
+}
+.modal
+{
+  overflow-y: auto !important;
+}
+
+/* ==========================================================================
+   Other
+   ========================================================================== */
+
+#tabam .panel-default {
+  border-bottom: none;
+  margin: 28px 7px;
+  font-size: 14px;
+  .panel-heading{
+    border: 1px solid #ddd;
+    border-radius: 7px;
+  }
+  :hover{
+    color: #fff;
+    background-color: darken(#4285f4, 10%);
+    border: 1px solid darken(#4285f4, 10%);
+  }
+}
+
+#tabpm .panel-default {
+  border-bottom: none;
+  margin: 28px 5px;
+  font-size: 14px;
+  .panel-heading{
+    border: 1px solid #ddd;
+    border-radius: 7px;
+  }
+  :hover{
+    color: #fff;
+    background-color: darken(#ff3850, 12%);
+    border: 1px solid darken(#ff3850, 12%);
+  }
+}
+
+.nav-tabs > .active{
+  border-bottom: 1px solid transparent;
+  a{
+    background-color: #fff !important;
+    margin-bottom: -1px;
+    &:hover{
+      color: #000 !important;
+    }
+  }
+}
+
+.nav-tabs > li{
+  a{
+    border: 1px solid #ddd;
+    margin-right:3px;
+    padding: 10px 6px;
+  }
+  #am_tab{
+    background-color: lighten(#4285f4, 37%);
+    color: #000;
+    &:hover{
+      background-color: darken(#4285f4, 15%);
+      color: #fff;
+    }
+  }
+  #pm_tab{
+    background-color: lighten(#ff3850, 37%);
+    color: #000;
+    &:hover{
+      background-color: darken(#ff3850, 15%);
+      color: #fff;
+    }
+  }
+}
+
+
+
+.pullRight{
+  float: right;
+  margin: 4px;
+}
+.tab-pane{
+  margin-top:45px;
+  a:hover{
+    text-decoration: none;
+  }
+}
+
+.desc {
+  margin-top: 25px;
+}
+
+/* ==========================================================================
+   Loading Animation
+   ========================================================================== */
+
+.loading{
+  display: block;
+  width: 100%;
+  .loader{
+    display: block;
+    width: 10%;
+    margin: 25px auto;
+  }
+}
+
