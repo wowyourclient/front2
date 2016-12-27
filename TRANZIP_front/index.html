@@ -20,10 +20,10 @@
       <!--[if lt IE 9] -->
   </head>
 
-  <body data-spy="scroll" data-offset="0" data-target="#theMenu">
+    <body data-spy="scroll" data-offset="0" data-target="#theMenu">
 
 
-  <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default">
 
       <nav class="menu" id="theMenu">
           <div class="menu-wrap">
@@ -48,7 +48,7 @@
           </section>
 
       </nav>
-  </nav>
+    </nav>
 		
 	<!-- Menu -->
 
@@ -65,15 +65,7 @@
 
                         <form class="form" id="form" role="search">
                             <div id="search_bar" class="input-group">
-                                <div class="hidden-xs input-group-btn">
-                                    <button type="button" class="height45 btn customBtn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Morning <span class="caret"></span></button>
-                                    <ul class="dropdown-menu">
-                                      <li><a href="#" class="btn btn-primary">Morning</a></li>
-
-                                      <li><a href="#" class="btn btn-danger">Afternoon</a></li>
-                                    </ul>
-                                </div>
-                                <input type="text" id="search" class="height45 form-control" aria-label="Amount (to the nearest dollar)" placeholder="Type in your address here_">
+                                <input type="text" id="search" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Type in your address here...">
                                 <i id="search_button" class="fa fa-lg fa-search"></i>
                             </div>
                         </form>
@@ -90,88 +82,79 @@
     <div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                </div>
-                <div class="modal-body">
-                    <div class="container">
-
-                        <ul id="myTabs" class="nav nav-tabs">
-                            <li class="active"><a href="#tabam" id="am_tab" data-toggle="tab">AM Bus Routes</a></li>
-                            <li><a id="pm_tab" href="#tabpm" data-toggle="tab">PM Bus Routes</a></li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div class="in active tab-pane fade" id="tabam">
-
-                                <a href="#">
-                                    <div class="panel-default">
-                                        <div class="panel-heading">William Blount High School <i class="fa fa-arrow-circle-right pullRight" aria-hidden="true"></i></div>
-                                    </div>
-                                </a>
-
-                                <a href="#">
-                                    <div class="panel-default">
-                                        <div class="panel-heading">Carpenters Middle School <i class="fa fa-arrow-circle-right pullRight" aria-hidden="true"></i></div>
-                                    </div>
-                                </a>
-
-                                <a href="#">
-                                    <div class="panel-default">
-                                        <div class="panel-heading">Union Grove Middle School <i class="fa fa-arrow-circle-right left pullRight" aria-hidden="true"></i></div>
-                                    </div>
-                                </a>
-
-                                <a href="#">
-                                    <div class="panel-default">
-                                        <div class="panel-heading">Fairview Elementary School <i class="fa fa-arrow-circle-right pullRight" aria-hidden="true"></i></div>
-                                    </div>
-                                </a>
-
-                            </div>
-
-                            <div class="tab-pane fade" id="tabpm">
-
-                                <a href="#">
-                                    <div class="panel-default">
-                                        <div class="panel-heading">William Blount High School <i class="fa fa-arrow-circle-right pullRight" aria-hidden="true"></i></div>
-                                    </div>
-                                </a>
-
-                                <a href="#">
-                                    <div class="panel-default">
-                                        <div class="panel-heading">Carpenters Middle School <i class="fa fa-arrow-circle-right pullRight" aria-hidden="true"></i></div>
-                                    </div>
-                                </a>
-
-                                <a href="#">
-                                    <div class="panel-default">
-                                        <div class="panel-heading">Union Grove Middle School <i class="fa fa-arrow-circle-right left pullRight" aria-hidden="true"></i></div>
-                                    </div>
-                                </a>
-
-                                <a href="#">
-                                    <div class="panel-default">
-                                        <div class="panel-heading">Fairview Elementary School <i class="fa fa-arrow-circle-right pullRight" aria-hidden="true"></i></div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div><! --/content -->
 
 
-                    </div><! --/container -->
-                </div>
-                <div class="loading container">
-                    <img class="loader" src="img/default.svg">
-                </div>
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <div class="changingHeading"><h4 class="modal-title">Which school do you go to?</h4></div>
+                    </div>
+                    <div class="container modal-body">
+                        <div class="container" id="innerContent">
+
+                            <a href="#">
+                                <div class="panel-default">
+                                    <div class="panel-heading school-submit"><i class="fa fa-graduation-cap marginRight" aria-hidden="true"></i>  William Blount High School <i class="fa fa-arrow-circle-right pullRight" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+
+                            <a href="#">
+                                <div class="panel-default">
+                                    <div class="panel-heading school-submit"><i class="fa fa-graduation-cap marginRight" aria-hidden="true"></i>  Heritage High School <i class="fa fa-arrow-circle-right pullRight" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+
+                            <a href="#">
+                                <div class="panel-default">
+                                    <div class="panel-heading school-submit"><i class="fa fa-book marginRight" aria-hidden="true"></i>  Carpenters Middle School <i class="fa fa-arrow-circle-right pullRight" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+
+                            <a href="#">
+                                <div class="panel-default">
+                                    <div class="panel-heading school-submit"><i class="fa fa-book marginRight" aria-hidden="true"></i>  Heritage Middle School <i class="fa fa-arrow-circle-right pullRight" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+
+                            <a href="#">
+                                <div class="panel-default">
+                                    <div class="panel-heading school-submit"><i class="fa fa-book marginRight" aria-hidden="true"></i>  Union Grove Middle School <i class="fa fa-arrow-circle-right left pullRight" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+
+                            <a href="#">
+                                <div class="panel-default">
+                                    <div class="panel-heading school-submit"><i class="fa fa-pencil marginRight" aria-hidden="true"></i>  Carpenters Elementary School <i class="fa fa-arrow-circle-right pullRight" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+
+                            <a href="#">
+                                <div class="panel-default">
+                                    <div class="panel-heading school-submit"><i class="fa fa-pencil marginRight"></i>  Mary Blount Elementary School <i class="fa fa-arrow-circle-right pullRight" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+
+                            <a href="#">
+                                <div class="panel-default">
+                                    <div class="panel-heading school-submit"><i class="fa fa-pencil marginRight"></i>  Fairview Elementary School <i class="fa fa-arrow-circle-right pullRight" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+
+                        </div><! --/container -->
+                    </div>
+                    <nav class="navbar-fixed-bottom">
+                        <div class="loading container">
+                            <img class="loader" src="img/default.svg">
+                        </div>
+                    </nav>
+
+
             </div><! --/modal content -->
         </div><! --/modal dialogue -->
     </div><! --/modal -->
 
 
-
     <div id="footer" class="navbar-fixed-bottom">
-        <h5>WILLIAM BLOUNT HIGH SCHOOL &copy; 2016</h5>
+        <h5>CodeFusion &copy; 2016</h5>
     </div>
 
 
