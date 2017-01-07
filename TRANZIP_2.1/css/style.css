@@ -26,6 +26,27 @@ hr {
 /* ==========================================================================
    General styles
    ========================================================================== */
+/* ==========================================================================
+   Buttons, inputs, and navs (not including primary navbar)
+   ========================================================================== */
+.squareButton {
+  margin: 7px;
+  border-radius: 0; }
+
+.adminEditSave {
+  position: absolute;
+  bottom: 125px;
+  right: 10px; }
+  .adminEditSave:focus, .adminEditSave:active {
+    outline: none; }
+
+.squareButton {
+  margin: 7px;
+  border-radius: 0; }
+
+html, body {
+  height: 100%; }
+
 body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -33,7 +54,8 @@ body {
   font-weight: 400;
   font-size: 16px;
   color: #000;
-  -webkit-overflow-scrolling: touch; }
+  -webkit-overflow-scrolling: touch;
+  margin: 0; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: sans-serif;
@@ -49,7 +71,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 10;
   border: none;
   border-radius: 0;
-  min-height: 87px;
+  height: 90px;
   background-color: rgba(255, 255, 255, 0.92); }
 
 .navicon-button {
@@ -71,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   width: 7rem;
   height: 1rem;
-  background-color: grey;
+  background-color: #222;
   user-select: none;
   border-radius: 0.5rem;
   transition: .75s;
@@ -81,7 +103,7 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-block;
     width: 7rem;
     height: 1rem;
-    background-color: grey;
+    background-color: #222;
     user-select: none;
     border-radius: 0.5rem;
     transition: .75s;
@@ -90,10 +112,10 @@ h1, h2, h3, h4, h5, h6 {
     transform-origin: 88% center; }
   .navicon:before {
     top: -2.15385rem;
-    background-color: grey; }
+    background-color: #222; }
   .navicon:after {
     top: 2.15385rem;
-    background-color: grey; }
+    background-color: #222; }
 
 .open.navicon-button {
   transform: scale3d(0.85, 0.85, 0.85); }
@@ -126,12 +148,13 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   top: 0;
   left: 0;
-  background: grey;
-  width: 200px;
-  height: 100%; }
+  background: #f5f5f5;
+  width: 225px;
+  height: 100%;
+  box-shadow: 0 0 5px #aaa; }
 
 .menu h1.logo a:hover {
-  color: #ff3850; }
+  color: #e74c3c; }
 
 .menu img.logo {
   margin: 20px 0;
@@ -153,7 +176,7 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   font-size: 14px;
   color: #222;
-  width: 40px;
+  width: 65px;
   height: 40px;
   line-height: 40px;
   top: 20px;
@@ -225,19 +248,14 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 0; }
   @media screen and (min-width: 992px) {
     #googlemapsWithRoutes {
-      width: 80%;
+      width: 78%;
       right: 0; } }
 
 /* ==========================================================================
    Foreground
    ========================================================================== */
-.login {
-  margin: 7px;
-  border-radius: 0; }
-
 .busOptions {
-  margin: 10px;
-  width: 94%; }
+  margin: 10px; }
 
 #element {
   z-index: 1; }
@@ -269,16 +287,52 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 14px;
   padding-bottom: 20px; }
   #search_bar button {
-    border-color: #ddd; }
+    border-color: #f5f5f5; }
     #search_bar button:hover {
-      border-color: #ddd; }
+      border-color: #f5f5f5; }
 
 .signOut {
   display: inline-block;
-  padding: 40px;
-  text-align: center; }
+  text-align: center;
+  padding: 34px 10px !important;
+  color: #5c6ef6; }
+
+.dropdown-toggle {
+  padding: 32px 25px !important;
+  color: #5c6ef6; }
+  .dropdown-toggle:hover {
+    background: #ddd; }
+  .dropdown-toggle i {
+    padding: 5px 0 5px 4px; }
+  .dropdown-toggle .busNumber {
+    padding: 5px 8px 5px 0; }
+
+.flexcontainer {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end; }
+
+.col-md-3 {
+  padding-right: 0; }
+
+.inlineNav {
+  float: left;
+  margin: 0; }
+  .inlineNav > li {
+    float: left; }
 
 #search {
+  z-index: 1;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  height: 50px;
+  padding: 0 15px; }
+
+#adminSearchBar {
   z-index: 1;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -290,11 +344,42 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 1;
   padding: 15px;
   position: absolute;
-  color: grey;
+  color: #5c6ef6;
   top: 0;
   right: 5px; }
   .fa-search:hover {
     cursor: pointer; }
+
+/* ==========================================================================
+   Admin menu
+   ========================================================================== */
+.busMenuDiv {
+  z-index: 21;
+  position: absolute;
+  top: 90px;
+  bottom: 0;
+  width: 100%;
+  background: #fff; }
+
+.div-square {
+  padding: 25px;
+  border: 2px solid #f5f5f5;
+  cursor: pointer;
+  color: #5c6ef6;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  margin: 5px; }
+  .div-square:hover {
+    background: #f5f5f5; }
+
+.div-square > a, .div-square > a:hover {
+  color: #5c6ef6;
+  text-decoration: none; }
+
+#page-inner {
+  margin: 30px 30px 30px 0;
+  padding: 10px; }
 
 /* ==========================================================================
    Footer
@@ -337,7 +422,8 @@ h1, h2, h3, h4, h5, h6 {
   height: auto;
   z-index: 1;
   color: #000;
-  padding: 10px; }
+  padding: 10px;
+  box-shadow: none; }
 
 /* ==========================================================================
    Modal
@@ -391,7 +477,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 5px 5px 28px 5px;
   font-size: 14px; }
   .panel-default .panel-heading {
-    border: 1px solid #ddd;
+    border: 1px solid #f5f5f5;
     border-radius: 7px; }
     .panel-default .panel-heading:hover {
       color: #fff;
@@ -399,21 +485,21 @@ h1, h2, h3, h4, h5, h6 {
 
 #bothRoutes {
   color: #fff;
-  background-color: #30b142; }
+  background-color: #d67118; }
   #bothRoutes:hover {
-    background-color: #35c54a; }
+    background-color: #e67e22; }
 
 #amRoutes {
   color: #fff;
-  background-color: #737373; }
+  background-color: #4459f5; }
   #amRoutes:hover {
-    background-color: grey; }
+    background-color: #5c6ef6; }
 
 #pmRoutes {
   color: #fff;
-  background-color: #ff1f3a; }
+  background-color: #e43725; }
   #pmRoutes:hover {
-    background-color: #ff3850; }
+    background-color: #e74c3c; }
 
 .pullRight {
   float: right;
@@ -440,6 +526,9 @@ h1, h2, h3, h4, h5, h6 {
       box-shadow: 0 0 5px #aaa; } }
 
 /* ==========================================================================
+   Admin Edit Page
+   ========================================================================== */
+/* ==========================================================================
    Results Page
    ========================================================================== */
 .resultsNav {
@@ -456,7 +545,8 @@ h1, h2, h3, h4, h5, h6 {
   margin: 5px auto 0 auto !important; }
 
 .navbar-brand img {
-  width: 225px; }
+  width: 210px;
+  padding-left: 5px; }
 
 #resultsPanel {
   z-index: 10;
@@ -464,18 +554,22 @@ h1, h2, h3, h4, h5, h6 {
   top: 90px;
   width: 100%;
   height: 125px;
-  background: grey; }
+  background: #f5f5f5; }
   @media screen and (min-width: 992px) {
     #resultsPanel {
-      width: 20%;
+      width: 22%;
       height: 100%;
       left: 0;
       top: 0;
-      background: grey;
+      background: #f5f5f5;
       box-shadow: 0 0 5px #aaa; }
       #resultsPanel #results {
-        margin: 125px auto;
-        color: #000; } }
+        margin: 115px auto;
+        color: #000;
+        overflow: auto;
+        height: 625px; }
+        #resultsPanel #results h4 {
+          margin-bottom: 25px; } }
 
 #reSearchPanel {
   z-index: 10;
@@ -483,7 +577,7 @@ h1, h2, h3, h4, h5, h6 {
   top: 215px;
   width: 100%;
   height: 75px;
-  background: grey; }
+  background: #5c6ef6; }
 
 .mobileOpenUpPanel {
   z-index: 10;
@@ -492,9 +586,9 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 17px;
   transition: top .5s;
-  color: #ff3850;
+  color: #e74c3c;
   text-align: center;
-  background: grey; }
+  background: #5c6ef6; }
   .mobileOpenUpPanel img {
     width: 34px;
     transition: transform .5s;
@@ -508,9 +602,9 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 17px;
   transition: top .5s;
-  color: #ff3850;
+  color: #e74c3c;
   text-align: center;
-  background: grey;
+  background: #5c6ef6;
   box-shadow: 0 0 5px #aaa; }
   .mobileOpenDownPanel img {
     width: 34px;
@@ -567,9 +661,9 @@ h1, h2, h3, h4, h5, h6 {
   margin: 12px auto;
   width: 90%; }
   #searchAgainBar button {
-    border-color: #ddd; }
+    border-color: #f5f5f5; }
     #searchAgainBar button:hover {
-      border-color: #ddd; }
+      border-color: #f5f5f5; }
 
 #searchAgain {
   -webkit-border-radius: 24px;
@@ -581,7 +675,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: inset 0 0 1px #222, 0 0 8px rgba(102, 175, 233, 0.75); }
   #searchAgain:focus {
     box-shadow: inset 0 0 1px #222, 0 0 8px rgba(102, 175, 233, 0.75);
-    border-color: #ddd; }
+    border-color: #f5f5f5; }
 
 #results {
   margin: 20px auto;
@@ -677,7 +771,7 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0.9;
     height: 100%;
     width: 100%;
-    color: grey; }
+    color: #5c6ef6; }
   .toggle1 input {
     opacity: 0;
     position: absolute;
@@ -691,12 +785,12 @@ h1, h2, h3, h4, h5, h6 {
       box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6); }
     .toggle1 input:active ~ .label {
       font-size: 20px;
-      color: #676767; }
+      color: #2c43f3; }
     .toggle1 input:checked ~ .button {
       box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6); }
     .toggle1 input:checked ~ .label {
       font-size: 20px;
-      color: #676767; }
+      color: #2c43f3; }
 
 .toggle2 {
   display: inline-block;
@@ -740,7 +834,7 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0.9;
     height: 100%;
     width: 100%;
-    color: #ff3850; }
+    color: #e74c3c; }
   .toggle2 input {
     opacity: 0;
     position: absolute;
@@ -754,15 +848,74 @@ h1, h2, h3, h4, h5, h6 {
       box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6); }
     .toggle2 input:active ~ .label {
       font-size: 20px;
-      color: #ff0523; }
+      color: #d62c1a; }
     .toggle2 input:checked ~ .button {
       box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6); }
     .toggle2 input:checked ~ .label {
       font-size: 20px;
-      color: #ff0523; }
+      color: #d62c1a; }
 
 .changedAddress {
   padding: 5px 0; }
+  .changedAddress:hover .removeChange {
+    display: block; }
+
+.addressNames {
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  border: 1px solid #ccc;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin-bottom: 0; }
+
+.btnDel {
+  color: #e74c3c;
+  background-color: #fff;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  border: 1px solid #ccc;
+  border-right: none;
+  white-space: nowrap;
+  padding: 6px 5px;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.btnAdd {
+  color: #5c6ef6;
+  background-color: #fff;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  border: 1px solid #ccc;
+  border-right-color: transparent;
+  white-space: nowrap;
+  padding: 6px 8px;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.removeChange {
+  display: none;
+  border-radius: 0;
+  padding: 6px 12px; }
 
 .login-page {
   padding: 25% 0 0;

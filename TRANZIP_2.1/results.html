@@ -82,7 +82,7 @@
                 <input type="text" class="form-control login" placeholder="Password...">
             </div>
 
-            <button class="btn btn-success login">Submit</button>
+            <button class="btn btn-success squareButton">Submit</button>
 
         </div><!-- /input-group -->
     </div>
@@ -164,7 +164,6 @@
 
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
 
@@ -189,7 +188,192 @@
             fullscreenControl: false,
             mapTypeControl: false,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
-            center: latLng
+            center: latLng,
+            styles: [
+                {
+                    "featureType": "administrative.province",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#333333"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "administrative.province",
+                    "elementType": "labels",
+                    "stylers": [
+                        {
+                            "visibility": "simplified"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "administrative.locality",
+                    "elementType": "labels",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "landscape",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "hue": "#FFAD00"
+                        },
+                        {
+                            "saturation": 50.2
+                        },
+                        {
+                            "lightness": -34.8
+                        },
+                        {
+                            "gamma": 1
+                        }
+                    ]
+                },
+                {
+                    "featureType": "landscape",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "color": "#e67e22"
+                        },
+                        {
+                            "saturation": "-10"
+                        },
+                        {
+                            "lightness": "21"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "landscape.natural",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "color": "#e67e22"
+                        },
+                        {
+                            "saturation": "-15"
+                        },
+                        {
+                            "lightness": "20"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "hue": "#FFC300"
+                        },
+                        {
+                            "saturation": 54.2
+                        },
+                        {
+                            "lightness": -14.4
+                        },
+                        {
+                            "gamma": 1
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi.park",
+                    "elementType": "labels",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.highway",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "hue": "#ffad00"
+                        },
+                        {
+                            "saturation": -19.8
+                        },
+                        {
+                            "lightness": -1.8
+                        },
+                        {
+                            "gamma": 1
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.highway",
+                    "elementType": "labels",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.arterial",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "hue": "#FFAD00"
+                        },
+                        {
+                            "saturation": 72.4
+                        },
+                        {
+                            "lightness": -32.6
+                        },
+                        {
+                            "gamma": 1
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.local",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "hue": "#FFAD00"
+                        },
+                        {
+                            "saturation": 74.4
+                        },
+                        {
+                            "lightness": -18
+                        },
+                        {
+                            "gamma": 1
+                        }
+                    ]
+                },
+                {
+                    "featureType": "water",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "hue": "#00FFA6"
+                        },
+                        {
+                            "saturation": -63.2
+                        },
+                        {
+                            "lightness": 38
+                        },
+                        {
+                            "gamma": 1
+                        }
+                    ]
+                }
+            ]
         };
 
         map = new google.maps.Map(document.getElementById('googlemapsWithRoutes'),

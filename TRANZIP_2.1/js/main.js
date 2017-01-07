@@ -46,5 +46,25 @@
         $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
     });
 
+    $('.antiMobileAlert').delay(4000).hide(1000);
+
+    $('.div-square').click(function(e){
+        e.preventDefault();
+        $('.busMenuDiv').toggle();
+        $('.hiddenForAdmin').show();
+    });
+
+    $('#busDropdown').click(function(e){
+        e.preventDefault();
+        $('.busMenuDiv').toggle();
+    });
+
+    $('.adminEditSave').click(function(e){
+        e.preventDefault();
+        alert("Would you like to confirm your changes?");
+    });
+
+
+
 })(jQuery);
 

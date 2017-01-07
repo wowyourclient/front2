@@ -227,6 +227,7 @@
             zoom: 8, // initialize zoom level - the max value is 21
             navigationControl: false,
             disableDefaultUI: true,
+            disableDoubleClickZoom: true,
             mapTypeControl: false,
             streetViewControl: false, // hide the yellow Street View pegman
             scaleControl: false, // allow users to zoom the Google Map
@@ -234,6 +235,33 @@
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             center: latLng,
             styles: [
+                {
+                    "featureType": "administrative.province",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#333333"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "administrative.province",
+                    "elementType": "labels",
+                    "stylers": [
+                        {
+                            "visibility": "simplified"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "administrative.locality",
+                    "elementType": "labels",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
                 {
                     "featureType": "landscape",
                     "elementType": "all",
@@ -253,6 +281,36 @@
                     ]
                 },
                 {
+                    "featureType": "landscape",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "color": "#e67e22"
+                        },
+                        {
+                            "saturation": "-10"
+                        },
+                        {
+                            "lightness": "21"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "landscape.natural",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "color": "#e67e22"
+                        },
+                        {
+                            "saturation": "-15"
+                        },
+                        {
+                            "lightness": "20"
+                        }
+                    ]
+                },
+                {
                     "featureType": "poi",
                     "elementType": "all",
                     "stylers": [
@@ -267,6 +325,15 @@
                         },
                         {
                             "gamma": 1
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi.park",
+                    "elementType": "labels",
+                    "stylers": [
+                        {
+                            "visibility": "off"
                         }
                     ]
                 },
