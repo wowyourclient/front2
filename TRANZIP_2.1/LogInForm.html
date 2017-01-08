@@ -18,35 +18,19 @@
 
 <body>
 
+<div class="login-page">
+    <div class="loginForm">
+        <form class="login-form">
+            <input type="text" placeholder="username"/>
+            <input type="password" placeholder="password"/>
+            <button>login</button>
+            <p class="message">Lost? <a href="index.html"> Go back to home page.</a></p>
+        </form>
+    </div>
+</div>
+
 <div id="googlemaps"></div>
 
-<div id="element">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 col-sm-offset-3">
-
-                <div class="login-page">
-                    <div class="loginForm">
-                        <form class="register-form">
-                            <input type="text" placeholder="name"/>
-                            <input type="password" placeholder="password"/>
-                            <input type="text" placeholder="email address"/>
-                            <button>create</button>
-                            <p class="message">Already registered? <a href="#">Sign In</a></p>
-                        </form>
-                        <form class="login-form">
-                            <input type="text" placeholder="username"/>
-                            <input type="password" placeholder="password"/>
-                            <button>login</button>
-                            <p class="message">Not registered? <a href="#">Create an account</a></p>
-                        </form>
-                    </div>
-                </div>
-
-            </div><! --/row definition -->
-        </div><! --/row -->
-    </div><! --/container -->
-</div>
 
 <script src="js/index.js"></script>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -79,6 +63,33 @@
             center: latLng,
             styles: [
                 {
+                    "featureType": "administrative.province",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#333333"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "administrative.province",
+                    "elementType": "labels",
+                    "stylers": [
+                        {
+                            "visibility": "simplified"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "administrative.locality",
+                    "elementType": "labels",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
                     "featureType": "landscape",
                     "elementType": "all",
                     "stylers": [
@@ -97,6 +108,36 @@
                     ]
                 },
                 {
+                    "featureType": "landscape",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "color": "#e67e22"
+                        },
+                        {
+                            "saturation": "-10"
+                        },
+                        {
+                            "lightness": "21"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "landscape.natural",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "color": "#e67e22"
+                        },
+                        {
+                            "saturation": "-15"
+                        },
+                        {
+                            "lightness": "20"
+                        }
+                    ]
+                },
+                {
                     "featureType": "poi",
                     "elementType": "all",
                     "stylers": [
@@ -111,6 +152,15 @@
                         },
                         {
                             "gamma": 1
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi.park",
+                    "elementType": "labels",
+                    "stylers": [
+                        {
+                            "visibility": "off"
                         }
                     ]
                 },

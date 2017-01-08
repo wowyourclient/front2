@@ -42,17 +42,7 @@
         }
     });
 
-    $('.message a').click(function(){
-        $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-    });
-
     $('.antiMobileAlert').delay(4000).hide(1000);
-
-    $('.div-square').click(function(e){
-        e.preventDefault();
-        $('.busMenuDiv').toggle();
-        $('.hiddenForAdmin').show();
-    });
 
     $('#busDropdown').click(function(e){
         e.preventDefault();
@@ -63,6 +53,21 @@
         e.preventDefault();
         alert("Would you like to confirm your changes?");
     });
+
+    $('#deleteBusButton').click(function(){
+        $("#busDeleteState").toggle();
+    });
+    $('#addBusButton').click(function(){
+        $('#addBusForm').toggle();
+    });
+
+    $('.deleteBusOption').hover(function(){
+        $( "i", this).toggleClass("fa-bus fa-times-circle");
+    }).click(function(e){
+        e.preventDefault();
+        $('#deleteModal').modal('toggle');
+    });
+
 
 
 

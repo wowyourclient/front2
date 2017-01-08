@@ -1,22 +1,12 @@
-$break-small: 992px;
-
-$footercolor: #eee;
-$primarycolor: #e74c3c;
-$secondarycolor: #5c6ef6;
-$tertiarycolor: #e67e22;
-$darkCLR: #222;
-$dark-mediumCLR: #666;
-$mediumCLR: #aaa;
-$lightCLR: #f5f5f5;
-
-$size: 70px;
-$radius: $size * 0.845;
-$glow: $size * 0.125;
-
-
 /* ==========================================================================
    Base Styles, Bootstrap Modifications & Fonts Import
    ========================================================================== */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+* {
+  outline:none;
+}
 
 html,
 button,
@@ -26,9 +16,25 @@ textarea {
   color: #222;
 }
 
-/*
- * A better looking default horizontal rule
- */
+html, body{
+  height: 100%;
+}
+
+
+body{
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+  -webkit-overflow-scrolling: touch;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
 
 hr {
   display: block;
@@ -43,21 +49,32 @@ hr {
   text-align: center;
 }
 
-
 /* ==========================================================================
-   General styles
+   Sass Vars
    ========================================================================== */
+
+
+$break-small: 992px;
+
+$footercolor: #eee;
+$primarycolor: #e74c3c;
+$secondarycolor: #5c6ef6;
+$tertiarycolor: #e67e22;
+$darkCLR: #222;
+$dark-mediumCLR: #666;
+$mediumCLR: #aaa;
+$light-mediumCLR: #ccc;
+$lightCLR: #f5f5f5;
+
+$size: 70px;
+$radius: $size * 0.845;
+$glow: $size * 0.125;
 
 
 
 /* ==========================================================================
    Buttons, inputs, and navs (not including primary navbar)
    ========================================================================== */
-
-.squareButton{
-  margin: 7px;
-  border-radius: 0;
-}
 
 .adminEditSave{
   position: absolute;
@@ -70,30 +87,12 @@ hr {
 
 .squareButton{
   margin: 7px;
-  border-radius: 0;
+  border-radius: 2px;
 }
 
-html, body{
-  height: 100%;
+.form-control{
+  margin-right: 15px;
 }
-
-
-body {
-  font-family: "Roboto", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
-  font-size: 16px;
-  color: #000;
-  -webkit-overflow-scrolling: touch;
-  margin: 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: sans-serif;
-  font-weight: 400;
-}
-
 /* ==========================================================================
    MENU CONFIGURATION
    ========================================================================== */
@@ -316,7 +315,7 @@ $navicon-size : 7rem;
    ========================================================================== */
 
 
-.busOptions{
+.busOptions {
   margin: 10px;
 }
 
@@ -362,7 +361,8 @@ $navicon-size : 7rem;
 .signOut{
   display: inline-block;
   text-align: center;
-  padding: 34px 10px !important;
+  margin-top: 22px;
+  padding: 12px !important;
   color: $secondarycolor;
 }
 
@@ -388,6 +388,35 @@ $navicon-size : 7rem;
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
 }
+.createBusContainer {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  margin-top: 10px;
+  select{
+    display: flex;
+    flex: 1;
+    height: 34px;
+    padding: 0 6px;
+    margin: 0 6px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  h4{
+    display: flex;
+    flex: 3;
+  }
+}
+.justifiedBtn{
+  width: 100%;
+  margin: 15px auto;
+}
+
 .col-md-3{
   padding-right: 0;
 }
@@ -401,15 +430,6 @@ $navicon-size : 7rem;
 }
 #search{
 
-  z-index: 1;
-  -webkit-border-radius:2px;
-  -moz-border-radius:2px;
-  border-radius:2px;
-  height: 50px;
-  padding: 0 15px;
-}
-
-#adminSearchBar{
   z-index: 1;
   -webkit-border-radius:2px;
   -moz-border-radius:2px;
@@ -433,8 +453,84 @@ $navicon-size : 7rem;
    Admin menu
    ========================================================================== */
 
+.adminSearchFlex{
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+#label {
+  display: flex;
+  flex: 1;
+  margin-top: 14px;
+  font-weight: normal;
+  select {
+    border-color: $light-mediumCLR !important;
+    color: $mediumCLR;
+    font-size: 14px;
+    padding: 7px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+    height: 50px;
+  }
+}
+#adminSearchBar{
+  display: flex;
+  flex: 5;
+  margin-top: 14px;
+}
+
+#adminSearch{
+  z-index: 1;
+  -webkit-border-radius:2px;
+  -moz-border-radius:2px;
+  border-radius:2px;
+  height: 50px;
+  padding: 0 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.adminPageState{
+  z-index: 15;
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+}
 .busMenuDiv{
-  z-index: 21;
+  z-index: 12;
   position: absolute;
   top: 90px;
   bottom: 0;
@@ -442,28 +538,65 @@ $navicon-size : 7rem;
   background: #fff;
 }
 
-.div-square {
-  padding:25px;
-  border:2px solid $lightCLR;
+#busMenuState{
+  z-index: 12;
+  position: absolute;
+  top: 90px;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+}
+#busDeleteState{
+  display: none;
+  z-index: 13;
+  position: absolute;
+  top: 90px;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+}
+
+#addBusForm{
+  display: none;
+  z-index: 13;
+  position: absolute;
+  top: 90px;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+}
+
+.busOption {
+  padding: 25px;
+  border: 2px solid $lightCLR;
   cursor: pointer;
   color: $secondarycolor;
-  -webkit-border-radius:8px;
-  -moz-border-radius:8px;
-  border-radius:8px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   margin:5px;
   &:hover{
     background: $lightCLR;
   }
 }
 
-.div-square> a,.div-square> a:hover {
-  color: $secondarycolor;
-  text-decoration:none;
+.deleteBusOption{
+  padding: 25px;
+  border: 2px solid $lightCLR;
+  cursor: pointer;
+  color: $primarycolor;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  margin:5px;
+  &:hover{
+    background: $lightCLR;
+  }
 }
 
-#page-inner {
+.page-inner {
   margin: 30px 30px 30px 0;
-  padding:10px;
+  padding: 10px;
 }
 
 
@@ -520,59 +653,59 @@ $navicon-size : 7rem;
     box-shadow: none;
   }
 
-  /* ==========================================================================
-     Modal
-     ========================================================================== */
-
-  .modal-dialog {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    border: none;
-  }
-  #innerContent{
-    position: absolute;
-    margin-bottom: 50px;
-    width: 100%;
-    left:0;
-    right: 0;
-  }
-  .modal-header{
-    border: none;
-    .modal-title{
-      padding: 12px 0 10px 25px;
-      font-size: 20px;
-      color: $mediumCLR;
-    }
-    .close{
-      padding: 10px;
-      font-size: 32px;
-      &:active{
-        outline:none;
-      }
-    }
-  }
-  .modal-body{
-    a:hover{
-      text-decoration: none;
-    }
-    a:active{
-      text-decoration: none;
-    }
-    a:focus{
-      text-decoration: none;
-    }
-  }
-  .modal-content {
-    min-height: 100%;
-    overflow: auto;
-    border-radius: 0;
-    border: none;
-  }
-  .modal{
-    overflow-y: auto;
-  }
+  ///* ==========================================================================
+  //   Modal
+  //   ========================================================================== */
+  //
+  //.modal-dialog {
+  //  width: 100%;
+  //  height: 100%;
+  //  margin: 0;
+  //  padding: 0;
+  //  border: none;
+  //}
+  //#innerContent{
+  //  position: absolute;
+  //  margin-bottom: 50px;
+  //  width: 100%;
+  //  left:0;
+  //  right: 0;
+  //}
+  //.modal-header{
+  //  border: none;
+  //  .modal-title{
+  //    padding: 12px 0 10px 25px;
+  //    font-size: 20px;
+  //    color: $mediumCLR;
+  //  }
+  //  .close{
+  //    padding: 10px;
+  //    font-size: 32px;
+  //    &:active{
+  //      outline:none;
+  //    }
+  //  }
+  //}
+  //.modal-body{
+  //  a:hover{
+  //    text-decoration: none;
+  //  }
+  //  a:active{
+  //    text-decoration: none;
+  //  }
+  //  a:focus{
+  //    text-decoration: none;
+  //  }
+  //}
+  //.modal-content {
+  //  min-height: 100%;
+  //  overflow: auto;
+  //  border-radius: 0;
+  //  border: none;
+  //}
+  //.modal{
+  //  overflow-y: auto;
+  //}
 
   /* ==========================================================================
      Other
@@ -1098,17 +1231,22 @@ $navicon-size : 7rem;
   padding: 6px 12px;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
 
 .login-page {
-  padding: 25% 0 0;
+  padding: 10% 0 0;
   margin: auto;
+  width: 75%;
+  @media screen and (min-width: $break-small) {
+    padding: 20% 0 0;
+    width: 360px;
+  }
 }
 .loginForm {
   position: relative;
   z-index: 1;
   background: #fff;
-  margin: 0 auto 100px;
+  margin: 0 auto;
   padding: 45px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -1129,7 +1267,7 @@ $navicon-size : 7rem;
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: orange;
+  background: $secondarycolor;
   width: 100%;
   border: 0;
   padding: 15px;
@@ -1141,7 +1279,7 @@ $navicon-size : 7rem;
   border-radius: 2px;
 }
 .loginForm button:hover,.loginForm button:active,.loginForm button:focus {
-  background: darkorange;
+  background: darken($secondarycolor, 10%);
 }
 .loginForm .message {
   margin: 15px 0 0;
@@ -1149,10 +1287,6 @@ $navicon-size : 7rem;
   font-size: 12px;
 }
 .loginForm .message a {
-  color: darkorange;
+  color: darken($secondarycolor, 10%);
   text-decoration: none;
 }
-.loginForm .register-form {
-  display: none;
-}
-
