@@ -16,8 +16,6 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9] -->
 </head>
 
 <body data-spy="scroll" data-offset="0" data-target="#theMenu">
@@ -25,29 +23,25 @@
 
 <nav class="navbar navbar-default resultsNav">
 
-    <div class="mobileNav" style="display: none">
+    <div class="mobileNav">
         <div class="navbar-brand navResults">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-xs-9">
-                        <p>Your Morning Bus: </p>
-                    </div>
-                    <div class="col-xs-3">
-                        <p class="pullLeft">3</p>
+                    <div class="resultsContainer">
+                        <p>In the morning you will ride bus:</p>
+                        <div class="amBusNumber"><span>47</span></div>
                     </div>
 
-                    <div class="col-xs-9">
-                        <p>Your Afternoon Bus: </p>
-                    </div>
-                    <div class="col-xs-3">
-                        <p class="pullLeft">47</p>
+                    <div class="resultsContainer">
+                        <p>In the afternoon you will ride bus:</p>
+                        <div class="pmBusNumber"><span>3</span></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container desktopNav">
+    <div class="container resultsDesktopNav">
         <div class="row">
 
             <div class="col-md-3">
@@ -71,33 +65,7 @@
     </div>
 </nav>
 
-<nav class="menu" id="theMenu">
-
-    <div class="menu-wrap">
-        <i class="fa fa-times menu-close"></i>
-        <div class="smoothScroll"><h1>Admin Login</h1></div>
-        <div class="input-group">
-            <div class="tupperware">
-                <input type="text" class="form-control login" placeholder="Username">
-                <input type="text" class="form-control login" placeholder="Password...">
-            </div>
-
-            <button class="btn btn-success squareButton">Submit</button>
-
-        </div><!-- /input-group -->
-    </div>
-
-    <!-- Menu button -->
-    <section>
-        <a id="menuToggle" class="navicon-button">
-            <div class="navicon"></div>
-        </a>
-    </section>
-
-</nav>
-
 <div id="googlemapsWithRoutes"></div>
-<div id="overlay" class="visible-xs visible-sm"></div>
 
 <div id="mobileControls">
 
@@ -106,19 +74,19 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xs-9">
-                        <p>Your Morning Bus: </p>
+                        <p>Your Morning Bus #: </p>
                     </div>
                     <div class="col-xs-3">
-                        <p class="pullLeft">3</p>
+                        <div class="amBusNumber"><span>47</span></div>
                     </div>
                 </div>
                 <hr />
                 <div class="row">
                     <div class="col-xs-9">
-                        <p>Your Afternoon Bus: </p>
+                        <p>Your Afternoon Bus #: </p>
                     </div>
                     <div class="col-xs-3">
-                        <p class="pullLeft">47</p>
+                        <div class="pmBusNumber"><span>3</span></div>
                     </div>
                 </div>
             </div>
@@ -136,13 +104,10 @@
             </div>
         </form>
     </div>
-
 </div>
 
-
-
-<div id="mobileTogglePanel" class="visible-xs visible-sm mobileOpenUpPanel">
-    <span><img id="scrollDownImg" src="./img/downArrow.svg" alt="Scroll Down"></span>
+<div id="mobileTogglePanel" class="visible-xs visible-sm mobileOpenDownPanel">
+    <span><img id="scrollDownImg" src="./img/searchCircle.svg" alt="Scroll Down"></span>
 </div>
 <div id="toggles">
     <div class="toggleContainer">
@@ -160,8 +125,6 @@
 </div>
 
 
-
-
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -170,8 +133,6 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
 <script type="text/javascript">
-    /* global google */
-    // The latitude and longitude of your business / place
 
     var position = [35.845626, -86.390778];
 
@@ -198,8 +159,7 @@
 
     google.maps.event.addDomListener(window, 'load', showGoogleMaps);
 </script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMEZiWzR_Oe22ml8Rl1-BNzdEG5pCJO6s&callback=showGoogleMaps">
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMEZiWzR_Oe22ml8Rl1-BNzdEG5pCJO6s&callback=showGoogleMaps">
 </script>
 
 </body>

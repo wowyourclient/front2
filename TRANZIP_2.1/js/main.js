@@ -27,9 +27,8 @@
 
     $('#scrollDownImg').bind('click', function(e) {
         e.preventDefault();
-        $("#mobileTogglePanel").toggleClass("mobileOpenUpPanel mobileOpenDownPanel");
+        $("#mobileTogglePanel").toggleClass("mobileOpenDownPanel mobileOpenUpPanel");
         $("#mobileControls").fadeToggle();
-        $("#overlay").toggleClass('visible-xs hidden-xs');
         $("#toggles").fadeToggle();
         if ($('.desktopNav').is(":visible")) {
             $(".desktopNav").fadeToggle(function () {

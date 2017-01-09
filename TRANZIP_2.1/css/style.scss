@@ -25,15 +25,11 @@ body{
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 16px;
   color: #000;
   -webkit-overflow-scrolling: touch;
   margin: 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 300;
 }
 
 hr {
@@ -323,7 +319,9 @@ $navicon-size : 7rem;
 .jumboBackground{
   background: rgba(100, 100, 100, .9);
   border-radius: 2px;
-  margin-top: 45px;
+  @media screen and (min-width: $break-small) {
+    margin-top: 45px;
+  }
 }
 
 #headerwrap img {
@@ -392,7 +390,27 @@ $navicon-size : 7rem;
   flex-direction: row;
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
+  input{
+    margin-right: 2px;
+  }
 }
+
+.resultsContainer {
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  padding: 4px 0;
+  p{
+    margin: 0;
+    display: flex;
+    flex: 10;
+  }
+  span{
+    display: flex;
+    flex: 1;
+  }
+}
+
 .createBusContainer {
   display: -webkit-flex;
   display: flex;
@@ -472,7 +490,6 @@ $navicon-size : 7rem;
   display: flex;
   flex: 1;
   margin-top: 14px;
-  font-weight: normal;
   select {
     border-color: $light-mediumCLR !important;
     color: $mediumCLR;
@@ -659,59 +676,60 @@ $navicon-size : 7rem;
     box-shadow: none;
   }
 
-  ///* ==========================================================================
-  //   Modal
-  //   ========================================================================== */
-  //
-  //.modal-dialog {
-  //  width: 100%;
-  //  height: 100%;
-  //  margin: 0;
-  //  padding: 0;
-  //  border: none;
-  //}
-  //#innerContent{
-  //  position: absolute;
-  //  margin-bottom: 50px;
-  //  width: 100%;
-  //  left:0;
-  //  right: 0;
-  //}
-  //.modal-header{
-  //  border: none;
-  //  .modal-title{
-  //    padding: 12px 0 10px 25px;
-  //    font-size: 20px;
-  //    color: $mediumCLR;
-  //  }
-  //  .close{
-  //    padding: 10px;
-  //    font-size: 32px;
-  //    &:active{
-  //      outline:none;
-  //    }
-  //  }
-  //}
-  //.modal-body{
-  //  a:hover{
-  //    text-decoration: none;
-  //  }
-  //  a:active{
-  //    text-decoration: none;
-  //  }
-  //  a:focus{
-  //    text-decoration: none;
-  //  }
-  //}
-  //.modal-content {
-  //  min-height: 100%;
-  //  overflow: auto;
-  //  border-radius: 0;
-  //  border: none;
-  //}
-  //.modal{
-  //  overflow-y: auto;
-  //}
+  /* ==========================================================================
+     Modal
+     ========================================================================== */
+
+  .wideModal{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  #innerContent{
+    position: absolute;
+    margin-bottom: 50px;
+    width: 100%;
+    left:0;
+    right: 0;
+  }
+  .modal-header{
+    border: none;
+    .modal-title{
+      padding: 12px 0 10px 25px;
+      font-size: 20px;
+      color: $mediumCLR;
+    }
+    .close{
+      padding: 10px;
+      font-size: 32px;
+      &:active{
+        outline:none;
+      }
+    }
+  }
+  .modal-body{
+    a:hover{
+      text-decoration: none;
+    }
+    a:active{
+      text-decoration: none;
+    }
+    a:focus{
+      text-decoration: none;
+    }
+  }
+  .modal-content {
+    min-height: 100%;
+    overflow: auto;
+    border-radius: 0;
+    border: none;
+  }
+  .modal{
+    overflow-y: auto;
+  }
 
   /* ==========================================================================
      Other
@@ -796,6 +814,36 @@ $navicon-size : 7rem;
     }
   }
 
+  .amBusNumber{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    color: #fff;
+    border: 1px solid #fff;
+    background: $secondarycolor;
+    span {
+      text-align: center;
+      line-height: 30px;
+      display: block;
+    }
+  }
+
+.pmBusNumber{
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  color: #fff;
+  border: 1px solid #fff;
+  background: $primarycolor;
+  span {
+    text-align: center;
+    line-height: 30px;
+    display: block;
+  }
+}
+
   .navbar-brand{
     width: 100%;
     height: 100%;
@@ -848,8 +896,11 @@ $navicon-size : 7rem;
     #edits{
       margin: 115px auto;
       color: #000;
-      overflow: auto;
-      height: 625px;
+      height: 600px;
+      .changesDiv{
+        height: 425px;
+        overflow: auto;
+      }
       h4{
         margin: 0 0 15px 30px;
       }
@@ -857,344 +908,363 @@ $navicon-size : 7rem;
   }
 }
 
+.nav-tabs {
+  margin: 0 14px;
+}
 
-  #reSearchPanel{
-    z-index: 10;
-    position: absolute;
-    top: 215px;
-    width: 100%;
-    height: 75px;
-    background: $secondarycolor;
-  }
 
-  .mobileOpenUpPanel{
-    z-index: 10;
-    position: absolute;
-    top: 290px;
-    width: 100%;
-    height: 17px;
-    transition: top .5s;
-    color: $primarycolor;
-    text-align: center;
-    background: $secondarycolor;
-    img{
-      width: 34px;
-      transition: transform .5s;
-      transform: rotate(180deg);
-      z-index: 10;
-    }
-  }
+#reSearchPanel{
+  z-index: 10;
+  position: absolute;
+  top: 215px;
+  width: 100%;
+  height: 75px;
+  background: $secondarycolor;
+}
 
-  .mobileOpenDownPanel{
-    z-index: 10;
-    position: absolute;
-    top: 90px;
-    width: 100%;
-    height: 17px;
-    transition: top .5s;
-    color: $primarycolor;
-    text-align: center;
-    background: $secondarycolor;
-    box-shadow:0 0 5px $mediumCLR;
-    img{
-      width: 34px;
-      transition: transform .5s;
-      transform: rotate(360deg) !important;
-      z-index: 10;
-    }
-  }
-
-  #mobileTogglePanel span {
-    position: absolute;
-    z-index: -1;
-    cursor: pointer;
-    top: 0;
-    left: 50%;
+.mobileOpenUpPanel{
+  z-index: 10;
+  position: absolute;
+  top: 290px;
+  width: 100%;
+  height: 17px;
+  transition: top .5s;
+  color: $primarycolor;
+  text-align: center;
+  background: $secondarycolor;
+  img{
     width: 34px;
-    height: 34px;
-    margin-left: -17px;
+    transition: transform .5s;
+    transform: rotate(90deg);
+    z-index: 10;
   }
+}
 
-  #mobileTogglePanel span::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    content: '';
+.mobileOpenDownPanel{
+  z-index: 10;
+  position: absolute;
+  top: 90px;
+  width: 100%;
+  height: 17px;
+  transition: top .5s;
+  color: $primarycolor;
+  text-align: center;
+  background: $secondarycolor;
+  box-shadow:0 0 5px $mediumCLR;
+  img{
     width: 34px;
-    height: 34px;
-    box-shadow: 0 0 0 0 rgba(255,255,255,.1);
-    border-radius: 100%;
+    transition: transform .5s;
+    transform: rotate(360deg) !important;
+    z-index: 10;
+  }
+}
+
+#mobileTogglePanel span {
+  position: absolute;
+  z-index: -1;
+  cursor: pointer;
+  top: 0;
+  left: 50%;
+  width: 34px;
+  height: 34px;
+  margin-left: -17px;
+}
+
+#mobileTogglePanel span::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  content: '';
+  width: 34px;
+  height: 34px;
+  box-shadow: 0 0 0 0 rgba(255,255,255,.1);
+  border-radius: 100%;
+  opacity: 0;
+  -webkit-animation: sdb03 4s 4;
+  animation: sdb03 4s 4;
+  box-sizing: border-box;
+}
+@-webkit-keyframes sdb03 {
+  0% {
     opacity: 0;
-    -webkit-animation: sdb03 4s 4;
-    animation: sdb03 4s 4;
-    box-sizing: border-box;
   }
-  @-webkit-keyframes sdb03 {
-    0% {
-      opacity: 0;
-    }
-    30% {
-      opacity: 1;
-    }
-    60% {
-      box-shadow: 0 0 0 60px rgba(255,255,255,.1);
-      opacity: 0;
-    }
-    100% {
-      opacity: 0;
-    }
+  30% {
+    opacity: 1;
   }
-  @keyframes sdb03 {
-    0% {
-      opacity: 0;
-    }
-    30% {
-      opacity: 1;
-    }
-    60% {
-      box-shadow: 0 0 0 60px rgba(255,255,255,.1);
-      opacity: 0;
-    }
-    100% {
-      opacity: 0;
-    }
+  60% {
+    box-shadow: 0 0 0 60px rgba(255,255,255,.1);
+    opacity: 0;
   }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes sdb03 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    box-shadow: 0 0 0 60px rgba(255,255,255,.1);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 
-  #searchAgainBar{
-    margin: 12px auto;
-    width: 90%;
-    button{
-      border-color: $lightCLR;
-      &:hover{
-        border-color: $lightCLR;
-      }
-    }
-  }
-
-  #searchAgain{
-    -webkit-border-radius:24px;
-    -moz-border-radius:24px;
-    border-radius:24px;
-    height: 50px;
-    padding: 0 22px;
+#searchAgainBar{
+  margin: 12px auto;
+  width: 90%;
+  button{
+    border-color: $lightCLR;
     &:hover{
-      box-shadow: inset 0 0 1px $darkCLR, 0 0 8px rgba(102, 175, 233, 0.75);
-    }
-    &:focus{
-      box-shadow: inset 0 0 1px $darkCLR, 0 0 8px rgba(102, 175, 233, 0.75);
       border-color: $lightCLR;
     }
   }
+}
 
-  #results{
-    margin: 20px auto;
-    color: white;
-    font-size: 16px;
-    text-align: center;
-    p{
-      margin: 5px auto;
-    }
+#searchAgain{
+  -webkit-border-radius:24px;
+  -moz-border-radius:24px;
+  border-radius:24px;
+  height: 50px;
+  padding: 0 22px;
+  &:hover{
+    box-shadow: inset 0 0 1px $darkCLR, 0 0 8px rgba(102, 175, 233, 0.75);
   }
+  &:focus{
+    box-shadow: inset 0 0 1px $darkCLR, 0 0 8px rgba(102, 175, 233, 0.75);
+    border-color: $lightCLR;
+  }
+}
 
-  #overlay {
-    z-index: 9;
+#results{
+  margin: 20px auto;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  p{
+    margin: 5px auto;
+  }
+}
+
+#overlay {
+  z-index: 9;
+  background: #000;
+  height: 100%;
+  width: 100%;
+  opacity: .60;
+  top: 0;
+  left: 0;
+  position: absolute;
+  padding: 0;
+}
+
+.lower{
+  z-index:1 !important;
+  transition: .5s;
+}
+.resultsDesktopNav{
+  display: none;
+  @media screen and (min-width: $break-small) {
+    display: block;
+  }
+}
+
+.mobileNav{
+  color: $darkCLR;
+  .navResults{
+    padding: 0 20px;
+    font-size: 14px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  @media screen and (min-width: $break-small) {
+    display: none;
+  }
+}
+
+#mobileControls{
+  display: none;
+  @media screen and (min-width: $break-small){
+    display: block;
+  }
+}
+
+.pullLeft{
+  text-align: left;
+}
+#toggles {
+  z-index: 10;
+  position: absolute;
+  bottom: $size;
+  right: ($size/2.5);
+  background: transparent;
+  width: 60px;
+  @media screen and (min-width: $break-small) {
+    display: block;
+  }
+}
+.toggleContainer {
+  text-align: center;
+  position: absolute;
+  margin-top: -105px;
+  width: 100%;
+  top: 0;
+}
+
+.toggle1 {
+  display: inline-block;
+  position: relative;
+  height: $size;
+  width: $size;
+  &:before {
+    border-radius: $radius;
     background: #000;
+    position: absolute;
+    margin-left: ( $radius - $glow ) * -0.5;
+    margin-top: ( $radius - $glow ) * -0.5;
+    opacity: 0.2;
+    content: '';
+    height: $radius - $glow;
+    width: $radius - $glow;
+    left: 50%;
+    top: 50%;
+  }
+  .button {
+
+    $radius: $size * 0.688;
+
+    transition: all 300ms cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5), inset 0 -3px 4px -1px rgba(0, 0, 0, 0.2), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 3px 4px -1px rgba(255, 255, 255, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.8), inset 0 20px 30px 0 rgba(255, 255, 255, 0.2);
+    border-radius: $radius;
+    position: absolute;
+    background: #ccd0d4;
+    margin-left: $radius * -0.5;
+    margin-top: $radius * -0.5;
+    display: block;
+    height: $radius;
+    width: $radius;
+    left: 50%;
+    top: 50%;
+
+  }
+  .label {
+    transition: color 300ms ease-out;
+    text-shadow: 1px 1px 3px #ccd0d4, 0 0 0 rgba(0, 0, 0, 0.8), 1px 1px 4px #fff;
+    line-height: ($size - 7);
+    text-align: center;
+    position: absolute;
+    font-size: 21px;
+    display: block;
+    opacity: 0.9;
     height: 100%;
     width: 100%;
-    opacity: .60;
-    top: 0;
+    color: $secondarycolor;
+  }
+  input {
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
     left: 0;
-    position: absolute;
-    padding: 0;
-  }
-
-  .lower{
-    z-index:1 !important;
-    transition: .5s;
-  }
-  .mobileNav{
-    padding-top: 14px;
-    .navResults{
-      font-size: 14px;
-      width: 70%;
-      margin: 0 auto;
+    top: 0;
+    &:active ~ .button {
+      box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6);
+    }
+    &:active ~ .label {
+      font-size: 20px;
+      color: darken($secondarycolor, 10%);
+    }
+    &:checked ~ .button {
+      box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6);
+    }
+    &:checked ~ .label {
+      font-size: 20px;
+      color: darken($secondarycolor, 10%);
     }
   }
-
-  .pullLeft{
-    text-align: left;
-  }
-  #toggles {
-    z-index: 10;
+}
+.toggle2 {
+  display: inline-block;
+  position: relative;
+  height: $size;
+  width: $size;
+  &:before {
+    border-radius: $radius;
+    background: #000;
     position: absolute;
-    bottom: $size;
-    right: ($size/2.5);
-    background: transparent;
-    width: 60px;
-    display: none;
-    @media screen and (min-width: $break-small) {
-      display: block;
-    }
+    margin-left: ( $radius - $glow ) * -0.5;
+    margin-top: ( $radius - $glow ) * -0.5;
+    opacity: 0.2;
+    content: '';
+    height: $radius - $glow;
+    width: $radius - $glow;
+    left: 50%;
+    top: 50%;
   }
-  .toggleContainer {
+  .button {
+
+    $radius: $size * 0.688;
+
+    transition: all 300ms cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5), inset 0 -3px 4px -1px rgba(0, 0, 0, 0.2), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 3px 4px -1px rgba(255, 255, 255, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.8), inset 0 20px 30px 0 rgba(255, 255, 255, 0.2);
+    border-radius: $radius;
+    position: absolute;
+    background: #ccd0d4;
+    margin-left: $radius * -0.5;
+    margin-top: $radius * -0.5;
+    display: block;
+    height: $radius;
+    width: $radius;
+    left: 50%;
+    top: 50%;
+
+  }
+  .label {
+    transition: color 300ms ease-out;
+    text-shadow: 1px 1px 3px #ccd0d4, 0 0 0 rgba(0, 0, 0, 0.8), 1px 1px 4px #fff;
+    line-height: ($size - 7);
     text-align: center;
     position: absolute;
-    margin-top: -105px;
+    font-size: 21px;
+    display: block;
+    opacity: 0.9;
+    height: 100%;
     width: 100%;
+    color: $primarycolor;
+  }
+  input {
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    left: 0;
     top: 0;
-  }
-
-  .toggle1 {
-    display: inline-block;
-    position: relative;
-    height: $size;
-    width: $size;
-    &:before {
-      border-radius: $radius;
-      background: #000;
-      position: absolute;
-      margin-left: ( $radius - $glow ) * -0.5;
-      margin-top: ( $radius - $glow ) * -0.5;
-      opacity: 0.2;
-      content: '';
-      height: $radius - $glow;
-      width: $radius - $glow;
-      left: 50%;
-      top: 50%;
+    &:active ~ .button {
+      box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6);
     }
-    .button {
-
-      $radius: $size * 0.688;
-
-      transition: all 300ms cubic-bezier(0.230, 1.000, 0.320, 1.000);
-      box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5), inset 0 -3px 4px -1px rgba(0, 0, 0, 0.2), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 3px 4px -1px rgba(255, 255, 255, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.8), inset 0 20px 30px 0 rgba(255, 255, 255, 0.2);
-      border-radius: $radius;
-      position: absolute;
-      background: #ccd0d4;
-      margin-left: $radius * -0.5;
-      margin-top: $radius * -0.5;
-      display: block;
-      height: $radius;
-      width: $radius;
-      left: 50%;
-      top: 50%;
-
+    &:active ~ .label {
+      font-size: 20px;
+      color: darken($primarycolor, 10%);
     }
-    .label {
-      transition: color 300ms ease-out;
-      text-shadow: 1px 1px 3px #ccd0d4, 0 0 0 rgba(0, 0, 0, 0.8), 1px 1px 4px #fff;
-      line-height: ($size - 7);
-      text-align: center;
-      position: absolute;
-      font-weight: 700;
-      font-size: 21px;
-      display: block;
-      opacity: 0.9;
-      height: 100%;
-      width: 100%;
-      color: $secondarycolor;
+    &:checked ~ .button {
+      box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6);
     }
-    input {
-      opacity: 0;
-      position: absolute;
-      cursor: pointer;
-      z-index: 1;
-      height: 100%;
-      width: 100%;
-      left: 0;
-      top: 0;
-      &:active ~ .button {
-        box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6);
-      }
-      &:active ~ .label {
-        font-size: 20px;
-        color: darken($secondarycolor, 10%);
-      }
-      &:checked ~ .button {
-        box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6);
-      }
-      &:checked ~ .label {
-        font-size: 20px;
-        color: darken($secondarycolor, 10%);
-      }
+    &:checked ~ .label {
+      font-size: 20px;
+      color: darken($primarycolor, 10%);
     }
   }
-  .toggle2 {
-    display: inline-block;
-    position: relative;
-    height: $size;
-    width: $size;
-    &:before {
-      border-radius: $radius;
-      background: #000;
-      position: absolute;
-      margin-left: ( $radius - $glow ) * -0.5;
-      margin-top: ( $radius - $glow ) * -0.5;
-      opacity: 0.2;
-      content: '';
-      height: $radius - $glow;
-      width: $radius - $glow;
-      left: 50%;
-      top: 50%;
-    }
-    .button {
-
-      $radius: $size * 0.688;
-
-      transition: all 300ms cubic-bezier(0.230, 1.000, 0.320, 1.000);
-      box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5), inset 0 -3px 4px -1px rgba(0, 0, 0, 0.2), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 3px 4px -1px rgba(255, 255, 255, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.8), inset 0 20px 30px 0 rgba(255, 255, 255, 0.2);
-      border-radius: $radius;
-      position: absolute;
-      background: #ccd0d4;
-      margin-left: $radius * -0.5;
-      margin-top: $radius * -0.5;
-      display: block;
-      height: $radius;
-      width: $radius;
-      left: 50%;
-      top: 50%;
-
-    }
-    .label {
-      transition: color 300ms ease-out;
-      text-shadow: 1px 1px 3px #ccd0d4, 0 0 0 rgba(0, 0, 0, 0.8), 1px 1px 4px #fff;
-      line-height: ($size - 7);
-      text-align: center;
-      position: absolute;
-      font-weight: 700;
-      font-size: 21px;
-      display: block;
-      opacity: 0.9;
-      height: 100%;
-      width: 100%;
-      color: $primarycolor;
-    }
-    input {
-      opacity: 0;
-      position: absolute;
-      cursor: pointer;
-      z-index: 1;
-      height: 100%;
-      width: 100%;
-      left: 0;
-      top: 0;
-      &:active ~ .button {
-        box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6);
-      }
-      &:active ~ .label {
-        font-size: 20px;
-        color: darken($primarycolor, 10%);
-      }
-      &:checked ~ .button {
-        box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6);
-      }
-      &:checked ~ .label {
-        font-size: 20px;
-        color: darken($primarycolor, 10%);
-      }
-    }
-  }
+}
 
 .changedAddress{
   padding: 5px 0;
@@ -1219,7 +1289,6 @@ $navicon-size : 7rem;
   background-color: #fff;
   display: inline-block;
   margin-bottom: 0;
-  font-weight: normal;
   text-align: center;
   vertical-align: middle;
   -ms-touch-action: manipulation;
@@ -1240,7 +1309,6 @@ $navicon-size : 7rem;
   background-color: #fff;
   display: inline-block;
   margin-bottom: 0;
-  font-weight: normal;
   text-align: center;
   vertical-align: middle;
   -ms-touch-action: manipulation;

@@ -19,14 +19,11 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 16px;
   color: #000;
   -webkit-overflow-scrolling: touch;
   margin: 0; }
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 300; }
 
 hr {
   display: block;
@@ -257,8 +254,10 @@ hr {
 
 .jumboBackground {
   background: rgba(100, 100, 100, 0.9);
-  border-radius: 2px;
-  margin-top: 45px; }
+  border-radius: 2px; }
+  @media screen and (min-width: 992px) {
+    .jumboBackground {
+      margin-top: 45px; } }
 
 #headerwrap img {
   display: block;
@@ -317,6 +316,21 @@ hr {
   flex-direction: row;
   -webkit-justify-content: flex-end;
   justify-content: flex-end; }
+  .flexcontainer input {
+    margin-right: 2px; }
+
+.resultsContainer {
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  padding: 4px 0; }
+  .resultsContainer p {
+    margin: 0;
+    display: flex;
+    flex: 10; }
+  .resultsContainer span {
+    display: flex;
+    flex: 1; }
 
 .createBusContainer {
   display: -webkit-flex;
@@ -386,8 +400,7 @@ hr {
 #label {
   display: flex;
   flex: 1;
-  margin-top: 14px;
-  font-weight: normal; }
+  margin-top: 14px; }
   #label select {
     border-color: #ccc !important;
     color: #aaa;
@@ -526,6 +539,51 @@ hr {
   box-shadow: none; }
 
 /* ==========================================================================
+   Modal
+   ========================================================================== */
+.wideModal {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: none; }
+
+#innerContent {
+  position: absolute;
+  margin-bottom: 50px;
+  width: 100%;
+  left: 0;
+  right: 0; }
+
+.modal-header {
+  border: none; }
+  .modal-header .modal-title {
+    padding: 12px 0 10px 25px;
+    font-size: 20px;
+    color: #aaa; }
+  .modal-header .close {
+    padding: 10px;
+    font-size: 32px; }
+    .modal-header .close:active {
+      outline: none; }
+
+.modal-body a:hover {
+  text-decoration: none; }
+.modal-body a:active {
+  text-decoration: none; }
+.modal-body a:focus {
+  text-decoration: none; }
+
+.modal-content {
+  min-height: 100%;
+  overflow: auto;
+  border-radius: 0;
+  border: none; }
+
+.modal {
+  overflow-y: auto; }
+
+/* ==========================================================================
    Other
    ========================================================================== */
 .panel-default {
@@ -593,6 +651,32 @@ hr {
   .resultsNav .container {
     width: 100%; }
 
+.amBusNumber {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  color: #fff;
+  border: 1px solid #fff;
+  background: #5c6ef6; }
+  .amBusNumber span {
+    text-align: center;
+    line-height: 30px;
+    display: block; }
+
+.pmBusNumber {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  color: #fff;
+  border: 1px solid #fff;
+  background: #e74c3c; }
+  .pmBusNumber span {
+    text-align: center;
+    line-height: 30px;
+    display: block; }
+
 .navbar-brand {
   width: 100%;
   height: 100%;
@@ -641,10 +725,15 @@ hr {
       #editsPanel #edits {
         margin: 115px auto;
         color: #000;
-        overflow: auto;
-        height: 625px; }
+        height: 600px; }
+        #editsPanel #edits .changesDiv {
+          height: 425px;
+          overflow: auto; }
         #editsPanel #edits h4 {
           margin: 0 0 15px 30px; } }
+
+.nav-tabs {
+  margin: 0 14px; }
 
 #reSearchPanel {
   z-index: 10;
@@ -667,7 +756,7 @@ hr {
   .mobileOpenUpPanel img {
     width: 34px;
     transition: transform .5s;
-    transform: rotate(180deg);
+    transform: rotate(90deg);
     z-index: 10; }
 
 .mobileOpenDownPanel {
@@ -775,12 +864,28 @@ hr {
   z-index: 1 !important;
   transition: .5s; }
 
+.resultsDesktopNav {
+  display: none; }
+  @media screen and (min-width: 992px) {
+    .resultsDesktopNav {
+      display: block; } }
+
 .mobileNav {
-  padding-top: 14px; }
+  color: #222; }
   .mobileNav .navResults {
+    padding: 0 20px;
     font-size: 14px;
-    width: 70%;
+    width: 100%;
     margin: 0 auto; }
+  @media screen and (min-width: 992px) {
+    .mobileNav {
+      display: none; } }
+
+#mobileControls {
+  display: none; }
+  @media screen and (min-width: 992px) {
+    #mobileControls {
+      display: block; } }
 
 .pullLeft {
   text-align: left; }
@@ -791,8 +896,7 @@ hr {
   bottom: 70px;
   right: 28px;
   background: transparent;
-  width: 60px;
-  display: none; }
+  width: 60px; }
   @media screen and (min-width: 992px) {
     #toggles {
       display: block; } }
@@ -840,7 +944,6 @@ hr {
     line-height: 63px;
     text-align: center;
     position: absolute;
-    font-weight: 700;
     font-size: 21px;
     display: block;
     opacity: 0.9;
@@ -903,7 +1006,6 @@ hr {
     line-height: 63px;
     text-align: center;
     position: absolute;
-    font-weight: 700;
     font-size: 21px;
     display: block;
     opacity: 0.9;
@@ -952,7 +1054,6 @@ hr {
   background-color: #fff;
   display: inline-block;
   margin-bottom: 0;
-  font-weight: normal;
   text-align: center;
   vertical-align: middle;
   -ms-touch-action: manipulation;
@@ -972,7 +1073,6 @@ hr {
   background-color: #fff;
   display: inline-block;
   margin-bottom: 0;
-  font-weight: normal;
   text-align: center;
   vertical-align: middle;
   -ms-touch-action: manipulation;
