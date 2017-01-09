@@ -814,7 +814,7 @@ $navicon-size : 7rem;
     top: 90px;
     width: 100%;
     height: 125px;
-    background: $lightCLR;
+    background: $secondarycolor;
     @media screen and (min-width: $break-small) {
       width: 22%;
       height: 100%;
@@ -833,6 +833,31 @@ $navicon-size : 7rem;
       }
     }
   }
+
+#editsPanel{
+  z-index: 10;
+  position: absolute;
+  top: 90px;
+  @media screen and (min-width: $break-small) {
+    width: 22%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: $lightCLR;
+    box-shadow:0 0 5px $mediumCLR;
+    #edits{
+      margin: 115px auto;
+      color: #000;
+      overflow: auto;
+      height: 625px;
+      h4{
+        margin: 0 0 15px 30px;
+      }
+    }
+  }
+}
+
+
   #reSearchPanel{
     z-index: 10;
     position: absolute;

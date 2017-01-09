@@ -43,7 +43,7 @@
                     </div>
                     <div id="adminSearchBar" class="input-group">
                         <input type="text" id="adminSearch" class="form-control"
-                               placeholder="Type in the address of the bus you want to edit.">
+                               placeholder="Enter an address to add">
                         <i class="searchButton fa fa-lg fa-search"></i>
                     </div>
 
@@ -191,16 +191,22 @@
 
 
 
-<div id="resultsPanel">
-    <div id="results">
-        <h4>Changes Made</h4>
+<div id="editsPanel">
+    <div id="edits">
+        <form class="flexcontainer container-fluid">
+            <div id="search_bar" class="input-group">
+                <input type="text" id="search" class="form-control" placeholder="Delete/Edit Address">
+                <i class="searchButton fa fa-lg fa-search"></i>
+            </div>
+        </form>
+        <h4>Changes Made:</h4>
         <div class="container-fluid changesDiv">
             <div class="changedAddress">
-                <p  class="input-group">
+                <p class="input-group">
                     <span class="input-group-btn">
                         <button class="btnDel">Deleted:</button>
                     </span>
-                    <input  type="text" tabindex="-1" class="addressNames" value="2441 Old Niles Ferry Rd." readonly>
+                    <input type="text" tabindex="-1" class="addressNames" value="2441 Old Niles Ferry Rd." readonly>
                     <span class="input-group-btn">
                         <button class="btn btn-default removeChange"><i class="fa fa-times"></i></button>
                     </span>
