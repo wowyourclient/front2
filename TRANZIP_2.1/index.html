@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="landingPage">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Trapp</title>
+    <title>Ttanzip | Search</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -16,8 +16,6 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-      <!--[if lt IE 9] -->
   </head>
 
     <body data-spy="scroll" data-offset="0" data-target="#theMenu">
@@ -25,44 +23,24 @@
 
     <nav class="navbar navbar-default container-fluid">
 
-            <div class="row">
+        <div class="flexcontainer">
 
-                <div class="col-md-3">
-                    <a class="navbar-brand" href="#">
-                        <img alt="Brand" src="./img/Tranzip2.png">
-                    </a>
-                </div>
+            <div class="">
+                <a class="navbar-brand" href="#">
+                    <img alt="Brand" src="./img/Tranzip2.png">
+                </a>
+            </div>
 
-            </div><! --/row -->
+            <div class="flexRight">
+
+                <ul class="nav inlineNav">
+                    <li><a href="LogInForm.html" class="signIn">Admin</a></li>
+                </ul>
+
+            </div><! --/row definition -->
+
+        </div><! --/row -->
     </nav>
-
-    <nav class="menu" id="theMenu">
-
-        <div class="menu-wrap">
-            <i class="fa fa-times menu-close"></i>
-            <div class="smoothScroll"><h1>Admin Login</h1></div>
-            <div class="input-group">
-                <div class="tupperware">
-                    <input type="text" class="form-control login" placeholder="Username">
-                    <input type="text" class="form-control login" placeholder="Password...">
-                </div>
-
-                <button class="btn btn-success login">Submit</button>
-
-            </div><!-- /input-group -->
-        </div>
-
-        <!-- Menu button -->
-        <section>
-            <a id="menuToggle" class="navicon-button">
-                <div class="navicon"></div>
-            </a>
-        </section>
-
-    </nav>
-
-
-    <!-- Menu -->
 
 
 	<div id="googlemaps"></div>
@@ -86,7 +64,7 @@
                             <div class="container-fluid">
                                 <form class="form" id="form" role="search">
                                     <div id="search_bar" class="input-group">
-                                        <input type="text" id="search" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Type in your address here...">
+                                        <input type="text" id="search" class="form-control" placeholder="Type in your address here...">
                                         <i class="searchButton fa fa-lg fa-search"></i>
                                     </div>
                                 </form>
@@ -186,8 +164,8 @@
                 <div class="col-sm-6">
                     <ul>
                         <li><a href="about.html">About CodeFusion</a></li>
-                        <li><a href="report.html">Report a Problem</a></li>
-                        <li><a href="privacy.html" id="last">Privacy Policy</a></li>
+                        <li><a href="reportAProblem.html">Report a Problem</a></li>
+                        <li><a href="privacyPolicy.html" id="last">Privacy Policy</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3"></div>
@@ -235,19 +213,22 @@
             styles: [
                 {
                     "featureType": "administrative.province",
-                    "elementType": "geometry",
+                    "elementType": "geometry.stroke",
                     "stylers": [
                         {
-                            "color": "#333333"
+                            "lightness": "-75"
                         }
                     ]
                 },
                 {
-                    "featureType": "administrative.province",
-                    "elementType": "labels",
+                    "featureType": "administrative.locality",
+                    "elementType": "all",
                     "stylers": [
                         {
-                            "visibility": "simplified"
+                            "visibility": "on"
+                        },
+                        {
+                            "lightness": "-25"
                         }
                     ]
                 },
@@ -280,31 +261,16 @@
                 },
                 {
                     "featureType": "landscape",
-                    "elementType": "geometry.fill",
+                    "elementType": "geometry",
                     "stylers": [
                         {
-                            "color": "#e67e22"
+                            "lightness": "0"
                         },
                         {
-                            "saturation": "-10"
+                            "saturation": "5"
                         },
                         {
-                            "lightness": "21"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "landscape.natural",
-                    "elementType": "geometry.fill",
-                    "stylers": [
-                        {
-                            "color": "#e67e22"
-                        },
-                        {
-                            "saturation": "-15"
-                        },
-                        {
-                            "lightness": "20"
+                            "gamma": "1"
                         }
                     ]
                 },
@@ -327,20 +293,11 @@
                     ]
                 },
                 {
-                    "featureType": "poi.park",
-                    "elementType": "labels",
-                    "stylers": [
-                        {
-                            "visibility": "off"
-                        }
-                    ]
-                },
-                {
                     "featureType": "road.highway",
                     "elementType": "all",
                     "stylers": [
                         {
-                            "hue": "#ffad00"
+                            "hue": "#FFAD00"
                         },
                         {
                             "saturation": -19.8
@@ -431,7 +388,4 @@
 
   </body>
 </html>
-
-
-
 

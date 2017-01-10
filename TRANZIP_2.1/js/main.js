@@ -30,13 +30,13 @@
         $("#mobileTogglePanel").toggleClass("mobileOpenDownPanel mobileOpenUpPanel");
         $("#mobileControls").fadeToggle();
         $("#toggles").fadeToggle();
-        if ($('.desktopNav').is(":visible")) {
-            $(".desktopNav").fadeToggle(function () {
+        if ($('.resultsDesktopNav').is(":visible")) {
+            $(".resultsDesktopNav").fadeToggle(function () {
                 $(".mobileNav").fadeToggle("fast")
             });
         } else {
             $(".mobileNav").fadeToggle(function () {
-                $(".desktopNav").fadeToggle("fast")
+                $(".resultsDesktopNav").fadeToggle("fast")
             });
         }
     });
@@ -66,9 +66,6 @@
         e.preventDefault();
         $('#deleteModal').modal('toggle');
     });
-
-
-
 
 })(jQuery);
 

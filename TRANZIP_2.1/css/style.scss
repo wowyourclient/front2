@@ -54,10 +54,10 @@ $break-small: 992px;
 
 $footercolor: #eee;
 $primarycolor: #e74c3c;
-$secondarycolor: #5c6ef6;
-$tertiarycolor: #e67e22;
+$secondarycolor: #4285f4;
+$tertiarycolor: #d89243;
 $darkCLR: #222;
-$dark-mediumCLR: #666;
+$dark-mediumCLR: #777;
 $mediumCLR: #aaa;
 $light-mediumCLR: #ccc;
 $lightCLR: #f5f5f5;
@@ -74,7 +74,7 @@ $glow: $size * 0.125;
 
 .adminEditSave{
   position: absolute;
-  bottom: 125px;
+  bottom: 7rem;
   right: 10px;
   &:focus, &:active{
     outline: none;
@@ -82,12 +82,11 @@ $glow: $size * 0.125;
 }
 
 .squareButton{
-  margin: 7px;
   border-radius: 2px;
 }
 
 /* ==========================================================================
-   MENU CONFIGURATION
+   FUTURE HELP PANEL
    ========================================================================== */
 
 $navicon-size : 7rem;
@@ -107,14 +106,6 @@ $navicon-size : 7rem;
   transition: .75s;
 }
 
-.navbar{
-  z-index: 10;
-  border: none;
-  border-radius: 0;
-  height: 90px;
-  background-color: rgba(255, 255, 255, .92);
-}
-
 .navicon-button {
   display: inline-block;
   position: absolute;
@@ -126,7 +117,6 @@ $navicon-size : 7rem;
   right: $navicon-size*3.1;
 
   &:hover {
-
     .navicon:before { top: -($navicon-size/3.5); }
     .navicon:after { top: $navicon-size/3.5; }}}
 
@@ -277,6 +267,19 @@ $navicon-size : 7rem;
   transition: all .1s ease-in-out;
 }
 
+.staticMap{
+  z-index: -1;
+  height: 0;
+  background: $mediumCLR no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 
 /* ==========================================================================
    Background
@@ -288,7 +291,7 @@ $navicon-size : 7rem;
   position:absolute;
   top: 0;
   left: 0;
-  z-index: 0;
+  z-index: -1;
 }
 
 #googlemapsWithRoutes{
@@ -323,6 +326,11 @@ $navicon-size : 7rem;
     margin-top: 45px;
   }
 }
+.aboutBackground{
+  background: rgba(100, 100, 100, .9);
+  border-radius: 2px;
+  margin: 20px 20px 75px 20px;
+}
 
 #headerwrap img {
   display: block;
@@ -332,14 +340,66 @@ $navicon-size : 7rem;
 .jumboHeading {
   text-align: center;
   color: #fff;
-  font-size: 45px;
-  padding: 10px;
+  font-size: 28px;
+  padding: 12px 6px;
   margin: 0 auto;
+  @media screen and (min-width: $break-small){
+    font-size: 45px;
+  }
 }
 .jumboText{
   color: #fff;
   font-size: 16px;
-  margin: 20px;
+  margin: 18px 18px 0 18px;
+  height: 100%;
+}
+
+.teamMember{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  margin: 35px 18px;
+  img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+  div{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    p{
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      -webkit-justify-content: flex-end;
+      justify-content: flex-end;
+    }
+  }
+  @media screen and (min-width: $break-small){
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    img{
+      height: 22%;
+      width: 22%;
+    }
+  }
+}
+.teamPic{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  img{
+    width: 100%;
+    height: auto;
+  }
 }
 
 #search_bar{
@@ -368,6 +428,23 @@ $navicon-size : 7rem;
   padding: 15px !important;
   color: $secondarycolor;
 }
+.signIn{
+  font-size: 18px;
+  margin: 16px 0;
+  padding: 12px 6px !important;
+  color: #fff;
+  background: $dark-mediumCLR;
+  border-radius: 2px;
+  &:hover{
+    color: #fff;
+    background-color: darken($dark-mediumCLR, 5%) !important;
+  }
+  @media screen and (min-width: $break-small){
+    font-size: 20px;
+    margin: 20px 4px;
+    padding: 7px 14px !important;
+  }
+}
 
 .dropdown-toggle{
   padding: 32px 25px !important;
@@ -388,11 +465,26 @@ $navicon-size : 7rem;
   display: flex;
   -webkit-flex-direction: row;
   flex-direction: row;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.verticalContainer{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.flexContainerRight {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
-  input{
-    margin-right: 2px;
-  }
 }
 
 .resultsContainer {
@@ -504,7 +596,7 @@ $navicon-size : 7rem;
 }
 #adminSearchBar{
   display: flex;
-  flex: 5;
+  flex: 9;
   margin-top: 14px;
 }
 
@@ -847,13 +939,18 @@ $navicon-size : 7rem;
   .navbar-brand{
     width: 100%;
     height: 100%;
-    padding: 5px;
-    margin: 5px auto 0 auto !important;
+    padding: 0;
+    margin: 8px auto !important;
+    img{
+      display: inline-block;
+    }
+    i{
+      padding: 0 24px 0 6px;
+    }
   }
 
   .navbar-brand img{
-    width: 210px;
-    padding-left: 5px;
+    width: 200px;
   }
 
   #resultsPanel{
@@ -871,12 +968,12 @@ $navicon-size : 7rem;
       background: $lightCLR;
       box-shadow:0 0 5px $mediumCLR;
       #results{
-        margin: 115px auto;
+        margin: 130px auto;
         color: #000;
         overflow: auto;
         height: 625px;
         h4{
-          margin-bottom: 25px;
+          margin-bottom: 35px;
         }
       }
     }
@@ -894,15 +991,14 @@ $navicon-size : 7rem;
     background: $lightCLR;
     box-shadow:0 0 5px $mediumCLR;
     #edits{
-      margin: 115px auto;
+      margin-top: 125px;
       color: #000;
-      height: 600px;
       .changesDiv{
-        height: 425px;
+        height: 60rem;
         overflow: auto;
       }
       h4{
-        margin: 0 0 15px 30px;
+        margin: 0 0 30px 30px;
       }
     }
   }
@@ -1046,9 +1142,9 @@ $navicon-size : 7rem;
   margin: 20px auto;
   color: white;
   font-size: 16px;
-  text-align: center;
+  text-align: left;
   p{
-    margin: 5px auto;
+    margin: 4px;
   }
 }
 
@@ -1267,9 +1363,12 @@ $navicon-size : 7rem;
 }
 
 .changedAddress{
-  padding: 5px 0;
+  padding: 10px 0;
   &:hover .removeChange{
     display: block;
+  }
+  .input-group{
+    margin: 0;
   }
 }
 .addressNames{
@@ -1330,15 +1429,13 @@ $navicon-size : 7rem;
   padding: 6px 12px;
 }
 
-
-
 .login-page {
   padding: 10% 0 0;
   margin: auto;
-  width: 75%;
+  width: 55%;
   @media screen and (min-width: $break-small) {
     padding: 20% 0 0;
-    width: 360px;
+    width: 30%;
   }
 }
 .loginForm {
@@ -1366,7 +1463,7 @@ $navicon-size : 7rem;
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: $secondarycolor;
+  background: $tertiarycolor;
   width: 100%;
   border: 0;
   padding: 15px;
@@ -1378,7 +1475,7 @@ $navicon-size : 7rem;
   border-radius: 2px;
 }
 .loginForm button:hover,.loginForm button:active,.loginForm button:focus {
-  background: darken($secondarycolor, 10%);
+  background: darken($tertiarycolor, 8%);
 }
 .loginForm .message {
   margin: 15px 0 0;
@@ -1386,6 +1483,6 @@ $navicon-size : 7rem;
   font-size: 12px;
 }
 .loginForm .message a {
-  color: darken($secondarycolor, 10%);
+  color: darken($tertiarycolor, 15%);
   text-decoration: none;
 }
