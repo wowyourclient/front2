@@ -54,7 +54,7 @@ $break-small: 992px;
 
 $footercolor: #eee;
 $primarycolor: #e74c3c;
-$secondarycolor: #4285f4;
+$secondarycolor: #582d76;
 $tertiarycolor: #d89243;
 $darkCLR: #222;
 $dark-mediumCLR: #777;
@@ -82,203 +82,12 @@ $glow: $size * 0.125;
 }
 
 .squareButton{
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 /* ==========================================================================
    FUTURE HELP PANEL
    ========================================================================== */
-
-$navicon-size : 7rem;
-
-.tupperware{
-  width: 185px;
-}
-
-@mixin line {
-  right: 0;
-  display: inline-block;
-  width: $navicon-size;
-  height: $navicon-size/7;
-  background-color: $darkCLR;
-  user-select: none;
-  border-radius: $navicon-size/14;
-  transition: .75s;
-}
-
-.navicon-button {
-  display: inline-block;
-  position: absolute;
-  padding: $navicon-size/2.45 $navicon-size/50;
-  transition: .75s;
-  cursor: pointer;
-  background: transparent;
-  top: $navicon-size/25;
-  right: $navicon-size*3.1;
-
-  &:hover {
-    .navicon:before { top: -($navicon-size/3.5); }
-    .navicon:after { top: $navicon-size/3.5; }}}
-
-.navicon {
-  @include line;
-  position: relative;
-  //top: $navicon-size/14;
-  //right: $navicon-size/2;
-
-  &:before, &:after {
-    @include line;
-    position: absolute;
-    content: '';
-    transform-origin: 88% center;
-  }
-  &:before { top: -($navicon-size/3.25); background-color: $darkCLR; }
-  &:after { top: $navicon-size/3.25; background-color: $darkCLR; }
-}
-
-
-.open.navicon-button {
-  transform: scale3d(.85,.85,.85);
-
-  .navicon:before, .navicon:after {
-    top: 0;
-    right: 0;
-    width: $navicon-size/1.8;
-  }
-
-  .navicon:before { transform: rotate3d(0,0,1,-35deg); }
-  .navicon:after { transform: rotate3d(0,0,1,35deg); }
-}
-
-.navbar-default{
-  border-radius: 0;
-}
-
-.menu {
-  position: fixed;
-  right: -200px;
-  width: 200px;
-  height: 100%;
-  top: 0;
-  z-index: 15;
-  text-align: left;
-}
-
-.menu.menu-open {
-  right: 0;
-  z-index: 15;
-}
-
-.menu-wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: $lightCLR;
-  width: 225px;
-  height: 100%;
-  box-shadow: 0 0 5px $mediumCLR;
-
-}
-
-.menu h1.logo a:hover {
-  color: $primarycolor;
-}
-
-.menu img.logo {
-  margin: 20px 0;
-  max-width: 160px;
-}
-
-.menu h1 {
-  margin-left: 20px;
-  color: $darkCLR;
-  display: block;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 40px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.menu-close {
-  cursor: pointer;
-  display: block;
-  position: absolute;
-  font-size: 14px;
-  color: $darkCLR;
-  width: 65px;
-  height: 40px;
-  line-height: 40px;
-  top: 20px;
-  right: 0;
-  padding: 10px;
-  -webkit-transition: all .1s ease-in-out;
-  -moz-transition: all .1s ease-in-out;
-  -o-transition: all .1s ease-in-out;
-  transition: all .1s ease-in-out;
-}
-
-.menu-close:hover {
-  color: #fff;
-  -webkit-transition: all .1s ease-in-out;
-  -moz-transition: all .1s ease-in-out;
-  -o-transition: all .1s ease-in-out;
-  transition: all .1s ease-in-out;
-}
-
-/* Push the body after clicking the menu button */
-.body-push {
-  overflow-x: hidden;
-  position: relative;
-  left: 0;
-}
-
-.body-push-toright {
-  left: 200px;
-}
-
-.body-push-toleft {
-  left: -200px;
-}
-
-.menu,
-.body-push {
-  -webkit-transition: all .3s ease;
-  -moz-transition: all .3s ease;
-  -o-transition: all .3s ease;
-  transition: all .3s ease;
-}
-
-#menuToggle {
-  z-index: 20;
-  min-width: 60px;
-  text-decoration: none;
-  cursor: pointer;
-  -webkit-transition: all .1s ease-in-out;
-  -moz-transition: all .1s ease-in-out;
-  -o-transition: all .1s ease-in-out;
-  transition: all .1s ease-in-out;
-}
-
-#menuToggle:hover {
-  -webkit-transition: all .1s ease-in-out;
-  -moz-transition: all .1s ease-in-out;
-  -o-transition: all .1s ease-in-out;
-  transition: all .1s ease-in-out;
-}
-
-.staticMap{
-  z-index: -1;
-  height: 0;
-  background: $mediumCLR no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
 
 
 /* ==========================================================================
@@ -307,6 +116,15 @@ $navicon-size : 7rem;
 }
 
 /* ==========================================================================
+   Main Navigation
+   ========================================================================== */
+.mainNav{
+  height: 50px;
+  width: 100%;
+  background: $secondarycolor;
+}
+
+/* ==========================================================================
    Foreground
    ========================================================================== */
 
@@ -320,8 +138,8 @@ $navicon-size : 7rem;
 }
 
 .jumboBackground{
-  background: rgba(100, 100, 100, .9);
-  border-radius: 2px;
+  background: $secondarycolor;
+  border-radius: 3px;
   @media screen and (min-width: $break-small) {
     margin-top: 45px;
   }
@@ -332,11 +150,16 @@ $navicon-size : 7rem;
   margin: 20px 20px 75px 20px;
 }
 
-#headerwrap img {
-  display: block;
-  width: 25%;
-  margin: 15px auto;
+#headerwrap{
+  margin-top: 55px;
+  img{
+    display: block;
+    width: 80%;
+    padding: 45px;
+    margin: auto;
+  }
 }
+
 .jumboHeading {
   text-align: center;
   color: #fff;
@@ -352,6 +175,10 @@ $navicon-size : 7rem;
   font-size: 16px;
   margin: 18px 18px 0 18px;
   height: 100%;
+  a{
+    color: $lightCLR;
+
+  }
 }
 
 .teamMember{
@@ -429,20 +256,13 @@ $navicon-size : 7rem;
   color: $secondarycolor;
 }
 .signIn{
-  font-size: 18px;
-  margin: 16px 0;
-  padding: 12px 6px !important;
+  display: inline-block;
+  margin: 9px;
+  font-size: 21px;
   color: #fff;
-  background: $dark-mediumCLR;
-  border-radius: 2px;
   &:hover{
-    color: #fff;
-    background-color: darken($dark-mediumCLR, 5%) !important;
-  }
-  @media screen and (min-width: $break-small){
-    font-size: 20px;
-    margin: 20px 4px;
-    padding: 7px 14px !important;
+    color: darken(#fff, 8%);
+    text-decoration: none;
   }
 }
 
@@ -537,20 +357,27 @@ $navicon-size : 7rem;
 }
 
 .inlineNav{
-  float: left;
   margin: 0;
-  > li {
-    float: left;
-  }
+  list-style: none;
 }
 #search{
-
   z-index: 1;
-  -webkit-border-radius:2px;
-  -moz-border-radius:2px;
-  border-radius:2px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
   height: 50px;
   padding: 0 15px;
+  border: 1px solid $secondarycolor;
+  &::-webkit-input-placeholder{
+    color: lighten($secondarycolor, 10%);
+  }
+  &::-moz-placeholder{
+    color: lighten($secondarycolor, 10%);
+  }
+  &:active, &:focus, &:hover{
+    outline: none;
+    box-shadow: 0 1px 7px lighten($secondarycolor, 50%);
+    }
 }
 
 .fa-search{
@@ -715,45 +542,44 @@ $navicon-size : 7rem;
 }
 
 
-  /* ==========================================================================
-     Footer
-     ========================================================================== */
+/* ==========================================================================
+   Footer
+   ========================================================================== */
 
-  #footer {
-    position: absolute;
-    width: 100%;
-    height: auto;
-    z-index: 1;
-    background: rgba(255, 255, 255, .92);
-
-    box-shadow: 0 0 5px $mediumCLR;
-    h6{
-      color: $mediumCLR;
-      padding-top: 19px;
-      margin: 0;
-      text-align: center;
-    }
-    ul{
-      margin: 0;
-      padding: 12px 0 15px 0;
-      text-align: center;
-      li{
-        display: inline-block;
-        a{
-          color: $dark-mediumCLR;
-          font-size: 12px;
-          padding-right: 7px;
-          margin-right: 7px;
-          border-right: 1px solid $mediumCLR;
-        }
-        #last{
-          border: none;
-          margin: 0;
-          padding: 0;
-        }
+#footer {
+  position: absolute;
+  width: 100%;
+  height: 47px;
+  z-index: 1;
+  background: #fff;
+  box-shadow: 0 0 5px $mediumCLR;
+  h6{
+    color: $secondarycolor;
+    padding-top: 16px;
+    margin: 0;
+    text-align: center;
+  }
+  ul{
+    margin: 0;
+    padding: 9px 0;
+    text-align: center;
+    li{
+      display: inline-block;
+      a{
+        color: lighten($secondarycolor, 10%);
+        font-size: 12px;
+        padding-right: 7px;
+        margin-right: 7px;
+        border-right: 1px solid $mediumCLR;
+      }
+      #last{
+        border: none;
+        margin: 0;
+        padding: 0;
       }
     }
   }
+}
 
   #footer2 {
     position: absolute;
@@ -889,6 +715,22 @@ $navicon-size : 7rem;
       box-shadow:0 0 5px $mediumCLR;
     }
   }
+
+.wheel {
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+  -webkit-animation: rotate 6s linear infinite;
+  animation: rotate 6s linear infinite;
+}
+@keyframes rotate {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
 /* ==========================================================================
    Admin Edit Page
    ========================================================================== */
@@ -901,8 +743,18 @@ $navicon-size : 7rem;
     z-index: 12;
     background: white;
     box-shadow:0 0 5px $mediumCLR;
+    height: 90px;
     .container{
       width: 100%;
+    }
+    .navBrand{
+      width: 100%;
+      height: 100%;
+      margin: 4px auto;
+      text-align: center;
+      img{
+        width: 225px;
+      }
     }
   }
 
@@ -935,23 +787,6 @@ $navicon-size : 7rem;
     display: block;
   }
 }
-
-  .navbar-brand{
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 8px auto !important;
-    img{
-      display: inline-block;
-    }
-    i{
-      padding: 0 24px 0 6px;
-    }
-  }
-
-  .navbar-brand img{
-    width: 200px;
-  }
 
   #resultsPanel{
     z-index: 10;
@@ -1457,7 +1292,7 @@ $navicon-size : 7rem;
   padding: 15px;
   box-sizing: border-box;
   font-size: 14px;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 .loginForm button {
   font-family: "Roboto", sans-serif;

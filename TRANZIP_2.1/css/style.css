@@ -50,180 +50,11 @@ hr {
     outline: none; }
 
 .squareButton {
-  border-radius: 2px; }
+  border-radius: 3px; }
 
 /* ==========================================================================
    FUTURE HELP PANEL
    ========================================================================== */
-.tupperware {
-  width: 185px; }
-
-.navicon-button {
-  display: inline-block;
-  position: absolute;
-  padding: 2.85714rem 0.14rem;
-  transition: .75s;
-  cursor: pointer;
-  background: transparent;
-  top: 0.28rem;
-  right: 21.7rem; }
-  .navicon-button:hover .navicon:before {
-    top: -2rem; }
-  .navicon-button:hover .navicon:after {
-    top: 2rem; }
-
-.navicon {
-  right: 0;
-  display: inline-block;
-  width: 7rem;
-  height: 1rem;
-  background-color: #222;
-  user-select: none;
-  border-radius: 0.5rem;
-  transition: .75s;
-  position: relative; }
-  .navicon:before, .navicon:after {
-    right: 0;
-    display: inline-block;
-    width: 7rem;
-    height: 1rem;
-    background-color: #222;
-    user-select: none;
-    border-radius: 0.5rem;
-    transition: .75s;
-    position: absolute;
-    content: '';
-    transform-origin: 88% center; }
-  .navicon:before {
-    top: -2.15385rem;
-    background-color: #222; }
-  .navicon:after {
-    top: 2.15385rem;
-    background-color: #222; }
-
-.open.navicon-button {
-  transform: scale3d(0.85, 0.85, 0.85); }
-  .open.navicon-button .navicon:before, .open.navicon-button .navicon:after {
-    top: 0;
-    right: 0;
-    width: 3.88889rem; }
-  .open.navicon-button .navicon:before {
-    transform: rotate3d(0, 0, 1, -35deg); }
-  .open.navicon-button .navicon:after {
-    transform: rotate3d(0, 0, 1, 35deg); }
-
-.navbar-default {
-  border-radius: 0; }
-
-.menu {
-  position: fixed;
-  right: -200px;
-  width: 200px;
-  height: 100%;
-  top: 0;
-  z-index: 15;
-  text-align: left; }
-
-.menu.menu-open {
-  right: 0;
-  z-index: 15; }
-
-.menu-wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: #f5f5f5;
-  width: 225px;
-  height: 100%;
-  box-shadow: 0 0 5px #aaa; }
-
-.menu h1.logo a:hover {
-  color: #e74c3c; }
-
-.menu img.logo {
-  margin: 20px 0;
-  max-width: 160px; }
-
-.menu h1 {
-  margin-left: 20px;
-  color: #222;
-  display: block;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 40px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase; }
-
-.menu-close {
-  cursor: pointer;
-  display: block;
-  position: absolute;
-  font-size: 14px;
-  color: #222;
-  width: 65px;
-  height: 40px;
-  line-height: 40px;
-  top: 20px;
-  right: 0;
-  padding: 10px;
-  -webkit-transition: all .1s ease-in-out;
-  -moz-transition: all .1s ease-in-out;
-  -o-transition: all .1s ease-in-out;
-  transition: all .1s ease-in-out; }
-
-.menu-close:hover {
-  color: #fff;
-  -webkit-transition: all .1s ease-in-out;
-  -moz-transition: all .1s ease-in-out;
-  -o-transition: all .1s ease-in-out;
-  transition: all .1s ease-in-out; }
-
-/* Push the body after clicking the menu button */
-.body-push {
-  overflow-x: hidden;
-  position: relative;
-  left: 0; }
-
-.body-push-toright {
-  left: 200px; }
-
-.body-push-toleft {
-  left: -200px; }
-
-.menu,
-.body-push {
-  -webkit-transition: all .3s ease;
-  -moz-transition: all .3s ease;
-  -o-transition: all .3s ease;
-  transition: all .3s ease; }
-
-#menuToggle {
-  z-index: 20;
-  min-width: 60px;
-  text-decoration: none;
-  cursor: pointer;
-  -webkit-transition: all .1s ease-in-out;
-  -moz-transition: all .1s ease-in-out;
-  -o-transition: all .1s ease-in-out;
-  transition: all .1s ease-in-out; }
-
-#menuToggle:hover {
-  -webkit-transition: all .1s ease-in-out;
-  -moz-transition: all .1s ease-in-out;
-  -o-transition: all .1s ease-in-out;
-  transition: all .1s ease-in-out; }
-
-.staticMap {
-  z-index: -1;
-  height: 0;
-  background: #aaa no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; }
-  .staticMap::-webkit-scrollbar {
-    display: none; }
-
 /* ==========================================================================
    Background
    ========================================================================== */
@@ -247,6 +78,14 @@ hr {
       right: 0; } }
 
 /* ==========================================================================
+   Main Navigation
+   ========================================================================== */
+.mainNav {
+  height: 50px;
+  width: 100%;
+  background: #582d76; }
+
+/* ==========================================================================
    Foreground
    ========================================================================== */
 .busOptions {
@@ -256,8 +95,8 @@ hr {
   z-index: 1; }
 
 .jumboBackground {
-  background: rgba(100, 100, 100, 0.9);
-  border-radius: 2px; }
+  background: #582d76;
+  border-radius: 3px; }
   @media screen and (min-width: 992px) {
     .jumboBackground {
       margin-top: 45px; } }
@@ -267,10 +106,13 @@ hr {
   border-radius: 2px;
   margin: 20px 20px 75px 20px; }
 
-#headerwrap img {
-  display: block;
-  width: 25%;
-  margin: 15px auto; }
+#headerwrap {
+  margin-top: 55px; }
+  #headerwrap img {
+    display: block;
+    width: 80%;
+    padding: 45px;
+    margin: auto; }
 
 .jumboHeading {
   text-align: center;
@@ -287,6 +129,8 @@ hr {
   font-size: 16px;
   margin: 18px 18px 0 18px;
   height: 100%; }
+  .jumboText a {
+    color: #f5f5f5; }
 
 .teamMember {
   display: -webkit-flex;
@@ -344,34 +188,27 @@ hr {
   text-align: center;
   margin-top: 22px;
   padding: 12px !important;
-  color: #4285f4; }
+  color: #582d76; }
 
 .signOut2 {
   display: inline-block;
   text-align: center;
   margin: 17px 20px;
   padding: 15px !important;
-  color: #4285f4; }
+  color: #582d76; }
 
 .signIn {
-  font-size: 18px;
-  margin: 16px 0;
-  padding: 12px 6px !important;
-  color: #fff;
-  background: #777;
-  border-radius: 2px; }
+  display: inline-block;
+  margin: 9px;
+  font-size: 21px;
+  color: #fff; }
   .signIn:hover {
-    color: #fff;
-    background-color: #6a6a6a !important; }
-  @media screen and (min-width: 992px) {
-    .signIn {
-      font-size: 20px;
-      margin: 20px 4px;
-      padding: 7px 14px !important; } }
+    color: #ebebeb;
+    text-decoration: none; }
 
 .dropdown-toggle {
   padding: 32px 25px !important;
-  color: #4285f4; }
+  color: #582d76; }
   .dropdown-toggle:hover {
     background: #ddd; }
   .dropdown-toggle i {
@@ -446,24 +283,30 @@ hr {
   padding-right: 0; }
 
 .inlineNav {
-  float: left;
-  margin: 0; }
-  .inlineNav > li {
-    float: left; }
+  margin: 0;
+  list-style: none; }
 
 #search {
   z-index: 1;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
   height: 50px;
-  padding: 0 15px; }
+  padding: 0 15px;
+  border: 1px solid #582d76; }
+  #search::-webkit-input-placeholder {
+    color: #743b9b; }
+  #search::-moz-placeholder {
+    color: #743b9b; }
+  #search:active, #search:focus, #search:hover {
+    outline: none;
+    box-shadow: 0 1px 7px #d5bce6; }
 
 .fa-search {
   z-index: 1;
   padding: 15px;
   position: absolute;
-  color: #4285f4;
+  color: #582d76;
   top: 0;
   right: 5px; }
   .fa-search:hover {
@@ -554,7 +397,7 @@ hr {
   padding: 25px;
   border: 2px solid #f5f5f5;
   cursor: pointer;
-  color: #4285f4;
+  color: #582d76;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -584,23 +427,23 @@ hr {
 #footer {
   position: absolute;
   width: 100%;
-  height: auto;
+  height: 47px;
   z-index: 1;
-  background: rgba(255, 255, 255, 0.92);
+  background: #fff;
   box-shadow: 0 0 5px #aaa; }
   #footer h6 {
-    color: #aaa;
-    padding-top: 19px;
+    color: #582d76;
+    padding-top: 16px;
     margin: 0;
     text-align: center; }
   #footer ul {
     margin: 0;
-    padding: 12px 0 15px 0;
+    padding: 9px 0;
     text-align: center; }
     #footer ul li {
       display: inline-block; }
       #footer ul li a {
-        color: #777;
+        color: #743b9b;
         font-size: 12px;
         padding-right: 7px;
         margin-right: 7px;
@@ -688,9 +531,9 @@ hr {
 
 #amRoutes {
   color: #fff;
-  background-color: #2a75f3; }
+  background-color: #4a2664; }
   #amRoutes:hover {
-    background-color: #4285f4; }
+    background-color: #582d76; }
 
 #pmRoutes {
   color: #fff;
@@ -722,6 +565,17 @@ hr {
     .navbar-fixed-bottom {
       box-shadow: 0 0 5px #aaa; } }
 
+.wheel {
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+  -webkit-animation: rotate 6s linear infinite;
+  animation: rotate 6s linear infinite; }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
 /* ==========================================================================
    Admin Edit Page
    ========================================================================== */
@@ -731,9 +585,17 @@ hr {
 .resultsNav {
   z-index: 12;
   background: white;
-  box-shadow: 0 0 5px #aaa; }
+  box-shadow: 0 0 5px #aaa;
+  height: 90px; }
   .resultsNav .container {
     width: 100%; }
+  .resultsNav .navBrand {
+    width: 100%;
+    height: 100%;
+    margin: 4px auto;
+    text-align: center; }
+    .resultsNav .navBrand img {
+      width: 225px; }
 
 .amBusNumber {
   border-radius: 50%;
@@ -742,7 +604,7 @@ hr {
   font-size: 14px;
   color: #fff;
   border: 1px solid #fff;
-  background: #4285f4; }
+  background: #582d76; }
   .amBusNumber span {
     text-align: center;
     line-height: 30px;
@@ -761,26 +623,13 @@ hr {
     line-height: 30px;
     display: block; }
 
-.navbar-brand {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 8px auto !important; }
-  .navbar-brand img {
-    display: inline-block; }
-  .navbar-brand i {
-    padding: 0 24px 0 6px; }
-
-.navbar-brand img {
-  width: 200px; }
-
 #resultsPanel {
   z-index: 10;
   position: absolute;
   top: 90px;
   width: 100%;
   height: 125px;
-  background: #4285f4; }
+  background: #582d76; }
   @media screen and (min-width: 992px) {
     #resultsPanel {
       width: 22%;
@@ -827,7 +676,7 @@ hr {
   top: 215px;
   width: 100%;
   height: 75px;
-  background: #4285f4; }
+  background: #582d76; }
 
 .mobileOpenUpPanel {
   z-index: 10;
@@ -838,7 +687,7 @@ hr {
   transition: top .5s;
   color: #e74c3c;
   text-align: center;
-  background: #4285f4; }
+  background: #582d76; }
   .mobileOpenUpPanel img {
     width: 34px;
     transition: transform .5s;
@@ -854,7 +703,7 @@ hr {
   transition: top .5s;
   color: #e74c3c;
   text-align: center;
-  background: #4285f4;
+  background: #582d76;
   box-shadow: 0 0 5px #aaa; }
   .mobileOpenDownPanel img {
     width: 34px;
@@ -1035,7 +884,7 @@ hr {
     opacity: 0.9;
     height: 100%;
     width: 100%;
-    color: #4285f4; }
+    color: #582d76; }
   .toggle1 input {
     opacity: 0;
     position: absolute;
@@ -1049,12 +898,12 @@ hr {
       box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6); }
     .toggle1 input:active ~ .label {
       font-size: 20px;
-      color: #1266f1; }
+      color: #3c1f51; }
     .toggle1 input:checked ~ .button {
       box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6); }
     .toggle1 input:checked ~ .label {
       font-size: 20px;
-      color: #1266f1; }
+      color: #3c1f51; }
 
 .toggle2 {
   display: inline-block;
@@ -1157,7 +1006,7 @@ hr {
   user-select: none; }
 
 .btnAdd {
-  color: #4285f4;
+  color: #582d76;
   background-color: #fff;
   display: inline-block;
   margin-bottom: 0;
@@ -1208,7 +1057,7 @@ hr {
   padding: 15px;
   box-sizing: border-box;
   font-size: 14px;
-  border-radius: 2px; }
+  border-radius: 3px; }
 
 .loginForm button {
   font-family: "Roboto", sans-serif;
