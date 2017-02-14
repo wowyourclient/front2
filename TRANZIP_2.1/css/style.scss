@@ -123,6 +123,15 @@ $glow: $size * 0.125;
   width: 100%;
   background: $secondarycolor;
 }
+.navBrand {
+  width: 100%;
+  height: 100%;
+  margin-top: 2px;
+  text-align: center;
+  img {
+    width: 230px;
+  }
+}
 
 /* ==========================================================================
    Foreground
@@ -267,7 +276,7 @@ $glow: $size * 0.125;
 }
 
 .dropdown-toggle{
-  padding: 32px 25px !important;
+  padding: 31px 25px !important;
   color: $secondarycolor;
   &:hover{
     background: #ddd;
@@ -359,6 +368,16 @@ $glow: $size * 0.125;
 .inlineNav{
   margin: 0;
   list-style: none;
+  float: left;
+  li{
+    float: left;
+    display: block;
+    position: relative;
+    a{
+      display: block;
+      position: relative;
+    }
+  }
 }
 #search{
   z-index: 1;
@@ -391,9 +410,30 @@ $glow: $size * 0.125;
     cursor: pointer;
   }
 }
+.fa-plus{
+  z-index: 1;
+  padding: 17px;
+  position: absolute;
+  color: $secondarycolor;
+  top: 0;
+  right: 5px;
+  &:hover{
+    cursor: pointer;
+  }
+}
 /* ==========================================================================
    Admin menu
    ========================================================================== */
+.adminNav{
+  z-index: 12;
+  background: white;
+  box-shadow:0 0 5px $mediumCLR;
+  height: 90px;
+  width: 100%;
+  .container{
+    width: 100%;
+  }
+}
 
 .adminSearchFlex{
   width: 100%;
@@ -747,14 +787,9 @@ $glow: $size * 0.125;
     .container{
       width: 100%;
     }
-    .navBrand{
-      width: 100%;
-      height: 100%;
-      margin: 4px auto;
-      text-align: center;
-      img{
-        width: 225px;
-      }
+    @media screen and (min-width: $break-small) {
+      width: 21%;
+      float: left;
     }
   }
 
