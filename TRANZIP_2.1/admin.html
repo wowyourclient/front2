@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -22,52 +22,50 @@
 
 <nav class="navbar navbar-default adminNav">
 
-    <div class="desktopNav">
+    <div class="resultsDesktopNav">
 
-        <div class="col-md-3">
-            <a class="navBrand" href="#">
-                <img alt="Brand" src="./img/tranzipLogo.png">
+        <div class="navBrand col-md-3">
+            <a href="#">
+                <img alt="tranzip Brand" src="img/tranzipLogo.png">
             </a>
         </div>
 
-        <div class="col-md-6">
-
-            <form class="navbar-form">
-                <div class="adminSearchFlex">
-
-                    <div id="label">
-                        <select name='options'>
-                            <option value='option-1'>AM</option>
-                            <option value='option-2'>PM</option>
-                        </select>
+        <div class="col-lg-6">
+            <div class="mediumMargin">
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-secondary amToggle dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            AM <span class="caret"></span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">AM</a>
+                            <a class="dropdown-item" href="#">PM</a>
+                        </div>
                     </div>
-                    <div id="adminSearchBar" class="input-group">
-                        <input type="text" id="adminSearch" class="form-control"
-                               placeholder="Enter an address to add">
+                    <div id="searchInNav" class="input-group">
+                        <input type="text" id="adminSearch" class="form-control" placeholder="Type in your address here...">
                         <i class="searchButton fa fa-lg fa-plus"></i>
                     </div>
-
                 </div>
-            </form>
+            </div>
+        </div>
 
-        </div><! --/row definition -->
+        <div class="col-md-3">
+            <div class="flexContainerRight">
 
-        <div class="flexContainerRight">
+                <ul class="inlineNav nav">
+                    <li><a href="#" class="signOut">Sign Out</a></li>
+                    <li>
+                        <a href="#" id="busDropdown" class="busDropdown dropdown-toggle">
+                            <span class="busNumber">#30</span><i class="fa fa-bus fa-lg"></i>
+                            <span class="caret"></span>
+                        </a>
+                    </li>
+                </ul>
 
-            <ul class="inlineNav nav">
-                <li><a href="#" class="signOut">Sign Out</a></li>
-                <li>
-                    <a href="#" id="busDropdown" class="dropdown-toggle">
-                        <span class="busNumber">#30</span><i class="fa fa-bus fa-lg"></i>
-                        <span class="caret"></span>
-                    </a>
-                </li>
-            </ul>
-
-        </div><! --/row definition -->
-
-    </div><! --/row -->
-
+            </div>
+        </div>
+    </div>
 </nav>
 
 <div class="busMenuDiv">
@@ -194,193 +192,6 @@
 <div id="editsPanel">
     <div id="edits">
         <h4>Changes Made:</h4>
-
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">AM</a></li>
-            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">PM</a></li>
-        </ul>
-
-        <!-- Tab panes -->
-        <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="home">
-                <div class="container-fluid changesDiv">
-                    <div class="changedAddress">
-                        <p class="input-group">
-                    <span class="input-group-btn">
-                        <button class="btnDel">Deleted:</button>
-                    </span>
-                            <input type="text" tabindex="-1" class="addressNames" value="2441 Old Niles Ferry Rd." readonly>
-                            <span class="input-group-btn">
-                        <button class="btn btn-default removeChange"><i class="fa fa-times"></i></button>
-                    </span>
-                        </p>
-                    </div>
-                    <div class="changedAddress">
-                        <p  class="input-group">
-                <span class="input-group-btn">
-                    <button class="btnDel">Deleted:</button>
-                </span>
-                            <input  type="text" tabindex="-1" class="addressNames" value="2441 Old Niles Ferry Rd." readonly>
-                            <span class="input-group-btn">
-                    <button class="btn btn-default removeChange"><i class="fa fa-times"></i></button>
-                </span>
-                        </p>
-                    </div>
-                    <div class="changedAddress">
-                        <p  class="input-group">
-                <span class="input-group-btn">
-                    <button class="btnAdd">Added:</button>
-                </span>
-                            <input  type="text" tabindex="-1" class="addressNames" value="2441 Old Niles Ferry Rd." readonly>
-                            <span class="input-group-btn">
-                    <button class="btn btn-default removeChange"><i class="fa fa-times"></i></button>
-                </span>
-                        </p>
-                    </div>
-                    <div class="changedAddress">
-                        <p  class="input-group">
-                <span class="input-group-btn">
-                    <button class="btnAdd">Added:</button>
-                </span>
-                            <input  type="text" tabindex="-1" class="addressNames" value="2441 Old Niles Ferry Rd." readonly>
-                            <span class="input-group-btn">
-                    <button class="btn btn-default removeChange"><i class="fa fa-times"></i></button>
-                </span>
-                        </p>
-                    </div>
-                    <div class="changedAddress">
-                        <p  class="input-group">
-                <span class="input-group-btn">
-                    <button class="btnDel">Deleted:</button>
-                </span>
-                            <input  type="text" tabindex="-1" class="addressNames" value="2441 Old Niles Ferry Rd." readonly>
-                            <span class="input-group-btn">
-                    <button class="btn btn-default removeChange"><i class="fa fa-times"></i></button>
-                </span>
-                        </p>
-                    </div>
-                    <div class="changedAddress">
-                        <p  class="input-group">
-                <span class="input-group-btn">
-                    <button class="btnDel">Deleted:</button>
-                </span>
-                            <input  type="text" tabindex="-1" class="addressNames" value="2441 Old Niles Ferry Rd." readonly>
-                            <span class="input-group-btn">
-                    <button class="btn btn-default removeChange"><i class="fa fa-times"></i></button>
-                </span>
-                        </p>
-                    </div>
-                    <div class="changedAddress">
-                        <p  class="input-group">
-                <span class="input-group-btn">
-                    <button class="btnAdd">Added:</button>
-                </span>
-                            <input  type="text" tabindex="-1" class="addressNames" value="2441 Old Niles Ferry Rd." readonly>
-                            <span class="input-group-btn">
-                    <button class="btn btn-default removeChange"><i class="fa fa-times"></i></button>
-                </span>
-                        </p>
-                    </div>
-                    <div class="changedAddress">
-                        <p  class="input-group">
-                <span class="input-group-btn">
-                    <button class="btnAdd">Added:</button>
-                </span>
-                            <input  type="text" tabindex="-1" class="addressNames" value="2441 Old Niles Ferry Rd." readonly>
-                            <span class="input-group-btn">
-                    <button class="btn btn-default removeChange"><i class="fa fa-times"></i></button>
-                </span>
-                        </p>
-                    </div>
-                    <div class="changedAddress">
-                        <p  class="input-group">
-                <span class="input-group-btn">
-                    <button class="btnDel">Deleted:</button>
-                </span>
-                            <input  type="text" tabindex="-1" class="addressNames" value="2441 Old Niles Ferry Rd." readonly>
-                            <span class="input-group-btn">
-                    <button class="btn btn-default removeChange"><i class="fa fa-times"></i></button>
-                </span>
-                        </p>
-                    </div>
-                    <div class="changedAddress">
-                        <p  class="input-group">
-                <span class="input-group-btn">
-                    <button class="btnDel">Deleted:</button>
-                </span>
-                            <input  type="text" tabindex="-1" class="addressNames" value="2441 Old Niles Ferry Rd." readonly>
-                            <span class="input-group-btn">
-                    <button class="btn btn-default removeChange"><i class="fa fa-times"></i></button>
-                </span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="profile">
-                <div class="container-fluid changesDiv">
-                    <div class="changedAddress">
-                        <p class="input-group">
-                    <span class="input-group-btn">
-                        <button class="btnDel">Deleted:</button>
-                    </span>
-                            <input type="text" tabindex="-1" class="addressNames" value="2441 Old Niles Ferry Rd." readonly>
-                            <span class="input-group-btn">
-                        <button class="btn btn-default removeChange"><i class="fa fa-times"></i></button>
-                    </span>
-                        </p>
-                    </div>
-                    <div class="changedAddress">
-                        <p  class="input-group">
-                <span class="input-group-btn">
-                    <button class="btnDel">Deleted:</button>
-                </span>
-                            <input  type="text" tabindex="-1" class="addressNames" value="2441 Old Niles Ferry Rd." readonly>
-                            <span class="input-group-btn">
-                    <button class="btn btn-default removeChange"><i class="fa fa-times"></i></button>
-                </span>
-                        </p>
-                    </div>
-                    <div class="changedAddress">
-                        <p  class="input-group">
-                <span class="input-group-btn">
-                    <button class="btnAdd">Added:</button>
-                </span>
-                            <input  type="text" tabindex="-1" class="addressNames" value="2441 Old Niles Ferry Rd." readonly>
-                            <span class="input-group-btn">
-                    <button class="btn btn-default removeChange"><i class="fa fa-times"></i></button>
-                </span>
-                        </p>
-                    </div>
-                    <div class="changedAddress">
-                        <p  class="input-group">
-                <span class="input-group-btn">
-                    <button class="btnAdd">Added:</button>
-                </span>
-                            <input  type="text" tabindex="-1" class="addressNames" value="2441 Old Niles Ferry Rd." readonly>
-                            <span class="input-group-btn">
-                    <button class="btn btn-default removeChange"><i class="fa fa-times"></i></button>
-                </span>
-                        </p>
-                    </div>
-                    <div class="changedAddress">
-                        <p  class="input-group">
-                <span class="input-group-btn">
-                    <button class="btnDel">Deleted:</button>
-                </span>
-                            <input  type="text" tabindex="-1" class="addressNames" value="2441 Old Niles Ferry Rd." readonly>
-                            <span class="input-group-btn">
-                    <button class="btn btn-default removeChange"><i class="fa fa-times"></i></button>
-                </span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <div>
-        <button class="btn btn-success squareButton adminEditSave">Save Changes</button>
     </div>
     <div id="footer2" class="navbar-fixed-bottom hidden-xs hidden-sm">
         <h5>CodeFusion &copy; 2016</h5>

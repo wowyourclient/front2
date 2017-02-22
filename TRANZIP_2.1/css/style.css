@@ -49,6 +49,12 @@ hr {
   .adminEditSave:focus, .adminEditSave:active {
     outline: none; }
 
+.smallMargin {
+  margin-top: 5px; }
+
+.mediumMargin {
+  margin-top: 8px; }
+
 .squareButton {
   border-radius: 3px; }
 
@@ -74,7 +80,7 @@ hr {
   z-index: 0; }
   @media screen and (min-width: 992px) {
     #googlemapsWithRoutes {
-      width: 78%;
+      width: 75%;
       right: 0; } }
 
 /* ==========================================================================
@@ -86,12 +92,13 @@ hr {
   background: #582d76; }
 
 .navBrand {
-  width: 100%;
   height: 100%;
-  margin-top: 2px;
+  margin-top: .5rem;
+  margin-left: -16px;
+  padding-left: 0 !important;
   text-align: center; }
   .navBrand img {
-    width: 230px; }
+    width: 200px; }
 
 /* ==========================================================================
    Foreground
@@ -114,13 +121,11 @@ hr {
   border-radius: 2px;
   margin: 20px 20px 75px 20px; }
 
-#headerwrap {
-  margin-top: 55px; }
-  #headerwrap img {
-    display: block;
-    width: 80%;
-    padding: 45px;
-    margin: auto; }
+#headerwrap img {
+  display: block;
+  width: 75%;
+  padding: 45px;
+  margin: auto; }
 
 .jumboHeading {
   text-align: center;
@@ -182,13 +187,12 @@ hr {
     width: 100%;
     height: auto; }
 
-#search_bar {
+#searchInNav {
   width: 100%;
-  margin-top: 14px;
-  padding-bottom: 20px; }
-  #search_bar button {
+  margin-top: 10px; }
+  #searchInNav button {
     border-color: #f5f5f5; }
-    #search_bar button:hover {
+    #searchInNav button:hover {
       border-color: #f5f5f5; }
 
 .signOut {
@@ -214,14 +218,19 @@ hr {
     color: #ebebeb;
     text-decoration: none; }
 
-.dropdown-toggle {
-  padding: 31px 25px !important;
+.amToggle {
+  margin-top: 10px;
+  border: 1px solid #582d76;
+  height: 50px; }
+
+.busDropdown {
+  padding: 29px 25px !important;
   color: #582d76; }
-  .dropdown-toggle:hover {
+  .busDropdown:hover {
     background: #ddd; }
-  .dropdown-toggle i {
+  .busDropdown i {
     padding: 5px 0 5px 4px; }
-  .dropdown-toggle .busNumber {
+  .busDropdown .busNumber {
     padding: 5px 8px 5px 0; }
 
 .flexcontainer {
@@ -343,12 +352,9 @@ hr {
    ========================================================================== */
 .adminNav {
   z-index: 12;
-  background: white;
   box-shadow: 0 0 5px #aaa;
-  height: 90px;
+  height: 85px;
   width: 100%; }
-  .adminNav .container {
-    width: 100%; }
 
 .adminSearchFlex {
   width: 100%;
@@ -381,11 +387,14 @@ hr {
 
 #adminSearch {
   z-index: 1;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
+  -webkit-border-radius: 0 3px 3px 0;
+  -moz-border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 3px 0;
   height: 50px;
-  padding: 0 15px; }
+  padding: 0 15px;
+  border: 1px solid #582d76; }
+  #adminSearch::-moz-placeholder {
+    color: #743b9b; }
 
 .adminPageState {
   z-index: 15;
@@ -619,14 +628,15 @@ hr {
    ========================================================================== */
 .resultsNav {
   z-index: 12;
-  background: white;
+  background: #fff;
   box-shadow: 0 0 5px #aaa;
-  height: 90px; }
+  height: 85px;
+  border-radius: 0;
+  width: 100%; }
   .resultsNav .container {
     width: 100%; }
   @media screen and (min-width: 992px) {
     .resultsNav {
-      width: 21%;
       float: left; } }
 
 .amBusNumber {
@@ -658,13 +668,13 @@ hr {
 #resultsPanel {
   z-index: 10;
   position: absolute;
-  top: 90px;
+  top: 85px;
   width: 100%;
   height: 125px;
   background: #582d76; }
   @media screen and (min-width: 992px) {
     #resultsPanel {
-      width: 22%;
+      width: 25%;
       height: 100%;
       left: 0;
       top: 0;
@@ -674,7 +684,7 @@ hr {
         margin: 130px auto;
         color: #000;
         overflow: auto;
-        height: 625px; }
+        min-height: 100px; }
         #resultsPanel #results h4 {
           margin-bottom: 35px; } }
 
@@ -684,7 +694,7 @@ hr {
   top: 90px; }
   @media screen and (min-width: 992px) {
     #editsPanel {
-      width: 22%;
+      width: 25%;
       height: 100%;
       left: 0;
       top: 0;
@@ -705,7 +715,7 @@ hr {
 #reSearchPanel {
   z-index: 10;
   position: absolute;
-  top: 215px;
+  top: 210px;
   width: 100%;
   height: 75px;
   background: #582d76; }
@@ -713,7 +723,7 @@ hr {
 .mobileOpenUpPanel {
   z-index: 10;
   position: absolute;
-  top: 290px;
+  top: 285px;
   width: 100%;
   height: 17px;
   transition: top .5s;
@@ -729,7 +739,7 @@ hr {
 .mobileOpenDownPanel {
   z-index: 10;
   position: absolute;
-  top: 90px;
+  top: 85px;
   width: 100%;
   height: 17px;
   transition: top .5s;
@@ -797,16 +807,14 @@ hr {
       border-color: #f5f5f5; }
 
 #searchAgain {
-  -webkit-border-radius: 24px;
-  -moz-border-radius: 24px;
-  border-radius: 24px;
-  height: 50px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  height: 45px;
   padding: 0 22px; }
-  #searchAgain:hover {
-    box-shadow: inset 0 0 1px #222, 0 0 8px rgba(102, 175, 233, 0.75); }
   #searchAgain:focus {
-    box-shadow: inset 0 0 1px #222, 0 0 8px rgba(102, 175, 233, 0.75);
-    border-color: #f5f5f5; }
+    border-color: #371c4a;
+    box-shadow: none; }
 
 #results {
   margin: 20px auto;
