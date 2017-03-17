@@ -3,13 +3,24 @@
     // Menu settings
     $("#menuToggle, .menu-close").on('click', function(){
         $('#menuToggle, .menu-close').toggleClass('open');
-        if ($( window ).width() < 992) {
-            $('#scrollDownPanel, #reSearchPanel, #resultsPanel, .resultsNav, #scrollDownPanel, .mobileOpenUpPanel,' +
-                ' .mobileOpenDownPanel').toggleClass('lower');
-        }
         $('body').toggleClass('body-push-toleft');
         $('#theMenu').toggleClass('menu-open');
         $('#search').toggleClass('hidden-sm');
+    });
+
+    $('#nav-icon1, .sidenav-background').click(function(){
+        $('.main-navigation, #nav-icon1').toggleClass('open');
+        $('.sidenav-background').toggle();
+    });
+
+
+    // Bus Creation Toggle Settings
+    $('.switch-control').bind('click', function() {
+        if($(this).is(':checked')) {
+            $('.added-form-fields').show()
+        }else {
+            $('.added-form-fields').hide()
+        }
     });
 
 
@@ -48,13 +59,15 @@
         $('.busMenuDiv').toggle();
     });
 
-    $('.adminEditSave').click(function(e){
-        e.preventDefault();
+    $('.adminEditSave').click(function(){
         alert("Would you like to confirm your changes?");
     });
 
+    // IndexAdmin controls
+
     $('#deleteBusButton').click(function(){
-        $("#busDeleteState").toggle();
+        $("#busDeleteState").show();
+        $(this).hide()
     });
     $('#addBusButton').click(function(){
         $('#addBusForm').toggle();

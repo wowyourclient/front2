@@ -20,31 +20,43 @@
 
 <body>
 
-<nav class="navbar navbar-default resultsNav">
+<nav class="navbar mainNav container-fluid">
 
-    <div class="desktopNav">
+    <div class="col-xs-2">
+        <a href="LogInForm.html" class="signIn adminButtonNav">
+            <i class="fa fa-question-circle" aria-hidden="true"></i>
+            <span class="hidden-sm hidden-xs">Help</span>
+        </a>
+    </div>
+    <div class="navBrand col-xs-8">
+        <a href="index.html">
+            <img alt="tranzip Brand" src="img/tranzipNavLogo.png">
+        </a>
+    </div>
+    <div class="col-xs-2">
+        <a href="#" class="help">
 
-        <div class="col-md-3">
-            <a class="navbar-brand" href="#">
-                <img alt="Brand" src="./img/Tranzip2.png">
-            </a>
-        </div>
-
-        <div class="col-md-6">
-
-        </div><! --/row definition -->
-
-        <div class="col-md-3 flexcontainer">
-
-            <ul class="nav inlineNav">
-                <li><a href="#" class="signOut2" >Sign In</a></li>
-            </ul>
-
-        </div><! --/row definition -->
-
-    </div><! --/row -->
+        </a>
+    </div>
 
 </nav>
+<ul class="adminToggle">
+    <div id="nav-icon1">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</ul>
+<nav class="main-navigation" role='navigation'>
+    <h2 class="menuTitle">Menu</h2>
+    <ul>
+        <li><a href=""><i class="fa fa-home"></i>Home</a></li>
+        <li><a href=""><i class="fa fa-user-circle-o"></i>Profile</a></li>
+        <li><a href=""><i class="fa fa-sign-out"></i>Log Out</a></li>
+        <li><a class="not-active"><i class="fa fa-pencil"></i>Edit New Bus:</a></li>
+    </ul>
+</nav>
+<div class="sidenav-background"></div>
 
 <div id="busMenuState">
     <ul>
@@ -258,36 +270,45 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-4 control-label">Bus Passenger Exchanges (optional)</label>
+                        <label class="col-md-4 control-label">Bus Passenger Exchanges</label>
+
                         <div class="col-md-4">
-                            <div class="createBusContainer">
-                                <h4>Passengers will start on bus: </h4>
-                                <select id="" name="">
-                                    <option value="1">#6</option>
-                                    <option value="2">#43</option>
-                                </select>
+                            <div class="checkbox switch-alternative">
+                                <label class="toggleLabel">
+                                    <input type="checkbox" class="switch-control">
+                                    <span class="switch-label"></span>
+                                </label>
                             </div>
-                            <div class="createBusContainer">
-                                <h4>Passengers will switch to bus: </h4>
-                                <select id="" name="">
-                                    <option value="1">#6</option>
-                                    <option value="2">#43</option>
-                                </select>
-                            </div>
-                            <div class="createBusContainer">
-                                <h4>Location: </h4>
-                                <select id="" name="">
-                                    <option value="1">Carpenters Middle School</option>
-                                    <option value="2">Union Grove Middle School</option>
-                                </select>
-                            </div>
-                            <div class="createBusContainer">
-                                <h4>Time of day: </h4>
-                                <select id="" name="">
-                                    <option value="1">Morning</option>
-                                    <option value="2">Afternoon</option>
-                                    <option value="2">Morning and Afternoon</option>
-                                </select>
+                            <div class="added-form-fields">
+                                <div class="createBusContainer">
+                                    <h4>Passengers will start on bus: </h4>
+                                    <select id="" name="">
+                                        <option value="1">#6</option>
+                                        <option value="2">#43</option>
+                                    </select>
+                                </div>
+                                <div class="createBusContainer">
+                                    <h4>Passengers will switch to bus: </h4>
+                                    <select id="" name="">
+                                        <option value="1">#6</option>
+                                        <option value="2">#43</option>
+                                    </select>
+                                </div>
+                                <div class="createBusContainer">
+                                    <h4>Location: </h4>
+                                    <select id="" name="">
+                                        <option value="1">Carpenters Middle School</option>
+                                        <option value="2">Union Grove Middle School</option>
+                                    </select>
+                                </div>
+                                <div class="createBusContainer">
+                                    <h4>Time of day: </h4>
+                                    <select id="" name="">
+                                        <option value="1">Morning</option>
+                                        <option value="2">Afternoon</option>
+                                        <option value="2">Morning and Afternoon</option>
+                                    </select>
+                                </div>
                             </div>
                             <button class="btn btn-success justifiedBtn" type="submit">Create</button>
                         </div>
@@ -301,11 +322,16 @@
 
 </div>
 
-<div class="container adminPageState">
-    <div class="flexcontainer">
-        <button id="deleteBusButton" class="btn btn-danger squareButton"><i class="fa fa-times-circle"></i> Delete
-        </button>
-        <button id="addBusButton" class="btn btn-primary squareButton"><i class="fa fa-plus-circle"></i> Add</button>
+<div class="container adminControls">
+    <div class="flexContainerRight">
+        <div class="nbs">
+            <a href="#" class="nb nbi nbsb3"><i class="fa fa-pencil"></i> <span>Edit </span></a>
+            <a href="#" class="nb nbi nbsb4"><i class="fa fa-times"></i> <span>Delete </span></a>
+            <a class="nb nb-main"> + </i><span>Add a bus</span></a>
+        </div>
+        <a id="deleteBusButton" href="#">Delete<i class="fa fa-2x fa-times"></i></a>
+        <a id="editBusButton" href="#">Edit<i class="fa fa-2x fa-pencil"></i></a>
+        <a id="addBusButton" href="#">Home<i class="fa fa-2x fa-home"></i></a>
     </div>
 </div>
 
