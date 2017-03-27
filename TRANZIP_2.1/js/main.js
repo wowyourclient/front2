@@ -1,5 +1,15 @@
 (function(){
 
+    // Static Maps
+
+
+    var height = Math.floor($(window).height()/2);
+    var width = Math.floor($(window).width()/2);
+    var googleStaticMaps = 'http://maps.googleapis.com/maps/api/staticmap?sensor=false&zoom=7&size='+width+'x'+height+'&center="35.845626,-86.390778"&style=feature:all|element:geometry|visibility:simplified&style=feature:administrative|element:geometry.fill|visibility:off|color:0x000000&style=feature:administrative|element:labels.text.fill|color:0x444444&style=feature:administrative|element:labels.icon|hue:0xff0000&style=feature:administrative.country|element:labels|visibility:off&style=feature:administrative.province|element:all|visibility:on&style=feature:administrative.province|element:geometry|hue:0xff0000|visibility:off&style=feature:administrative.province|element:geometry.stroke|visibility:on&style=feature:administrative.province|element:labels|visibility:off&style=feature:administrative.locality|element:labels|visibility:off&style=feature:landscape|element:all|color:0xf2f2f2&style=feature:landscape.man_made|element:labels|saturation:36&style=feature:poi|element:all|visibility:off&style=feature:poi.park|element:geometry|visibility:on&style=feature:poi.park|element:geometry.fill|color:0xecd7eb&style=feature:poi.park|element:labels.text|color:0xb17117&style=feature:road|element:all|saturation:-100|lightness:45&style=feature:road.highway|element:all|visibility:simplified&style=feature:road.highway|element:labels|visibility:off&style=feature:road.arterial|element:labels.icon|visibility:off&style=feature:transit|element:all|visibility:off&style=feature:water|element:all|color:0xff9100|visibility:on&style=feature:water|element:geometry.fill|color:0xec971f&key=AIzaSyAtBGtxDTLNMKuOVPI3OZKgr4AIiHeYTqs';
+
+    console.log(googleStaticMaps);
+    $('#googlemaps').html("<img src='" + googleStaticMaps + "'/>");
+
     // Menu settings
     $("#menuToggle, .menu-close").on('click', function(){
         $('#menuToggle, .menu-close').toggleClass('open');
@@ -66,11 +76,30 @@
     // IndexAdmin controls
 
     $('#deleteBusButton').click(function(){
+        $('#busMenuState').hide();
+        $('.nbs').hide();
         $("#busDeleteState").show();
-        $(this).hide()
+        $('.home').show();
+    });
+    $('#editBusButton').click(function(){
+        $('#busMenuState').hide();
+        $('.nbs').hide();
+        $("#busEditState").show();
+        $('.home').show();
     });
     $('#addBusButton').click(function(){
-        $('#addBusForm').toggle();
+        $('#busMenuState').hide();
+        $('.nbs').hide();
+        $("#addBusForm").show();
+        $('.home').show();
+    });
+    $('#backToAdminHome').click(function(){
+        $('#addBusForm').hide();
+        $('#busDeleteState').hide();
+        $('#busEditState').hide();
+        $('.home').hide();
+        $("#busMenuState").show();
+        $('.nbs').show();
     });
 
     $('.deleteBusOption').hover(function(){
@@ -78,6 +107,17 @@
     }).click(function(e){
         e.preventDefault();
         $('#deleteModal').modal('toggle');
+    });
+
+    $('.editBusOption').hover(function(){
+        $( "i", this).toggleClass("fa-bus fa-edit");
+    }).click(function(e){
+        e.preventDefault();
+        $('.editBusOption').click(function(){
+            $('#busEditState').hide();
+            $("#addBusForm").show();
+            $('.home').show();
+        });
     });
 
 })(jQuery);
