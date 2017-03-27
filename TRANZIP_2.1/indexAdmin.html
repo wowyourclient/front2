@@ -33,11 +33,6 @@
             <img alt="tranzip Brand" src="img/tranzipNavLogo.png">
         </a>
     </div>
-    <div class="col-xs-2">
-        <a href="#" class="help">
-
-        </a>
-    </div>
 
 </nav>
 <ul class="adminToggle">
@@ -50,10 +45,10 @@
 <nav class="main-navigation" role='navigation'>
     <h2 class="menuTitle">Menu</h2>
     <ul>
-        <li><a href=""><i class="fa fa-home"></i>Home</a></li>
         <li><a href=""><i class="fa fa-user-circle-o"></i>Profile</a></li>
+        <li><a href=""><i class="fa fa-home"></i>Admin Home</a></li>
+        <li><a href=""><i class="fa fa-external-link"></i>tranzip Home</a></li>
         <li><a href=""><i class="fa fa-sign-out"></i>Log Out</a></li>
-        <li><a class="not-active"><i class="fa fa-pencil"></i>Edit New Bus:</a></li>
     </ul>
 </nav>
 <div class="sidenav-background"></div>
@@ -189,18 +184,79 @@
     </ul>
 </div>
 
+<div id="busEditState">
+    <ul>
+        <div class="page-inner">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>ADMIN / Edit Any Bus</h2>
+                </div>
+            </div>
+            <hr />
+            <div class="row text-center pad-top">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                    <div class="editBusOption">
+                        <i class="fa fa-bus fa-3x"></i>
+                        <h4>Bus 5</h4>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                    <div class="editBusOption">
+                        <i class="fa fa-bus fa-3x"></i>
+                        <h4>Bus 5</h4>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                    <div class="editBusOption">
+                        <i class="fa fa-bus fa-3x"></i>
+                        <h4>Bus 5</h4>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                    <div class="editBusOption">
+                        <i class="fa fa-bus fa-3x"></i>
+                        <h4>Bus 5</h4>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                    <div class="editBusOption">
+                        <i class="fa fa-bus fa-3x"></i>
+                        <h4>Bus 5</h4>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                    <div class="editBusOption">
+                        <i class="fa fa-bus fa-3x"></i>
+                        <h4>Bus 5</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- /. ROW  -->
+            <div class="row text-center pad-top">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                    <div class="editBusOption">
+                        <i class="fa fa-bus fa-3x"></i>
+                        <h4>Bus 5</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ul>
+</div>
+
+
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Confirm Delete</h4>
+                <h4 class="modal-title text-center">Confirm Delete</h4>
             </div>
             <div class="modal-body">
                 <p>To delete the bus please type the bus number and click confirm.</p>
             </div>
             <div class="modal-footer flexcontainer">
-                <input id="" name="" type="text" placeholder="42" class="form-control input-md" required>
+                <input id="deleteInput" name="" type="text" placeholder="42" class="form-control input-md" required>
                 <button type="button" class="btn btn-danger">Confirm</button>
             </div>
         </div><!-- /.modal-content -->
@@ -325,13 +381,13 @@
 <div class="container adminControls">
     <div class="flexContainerRight">
         <div class="nbs">
-            <a href="#" class="nb nbi nbsb3"><i class="fa fa-pencil"></i> <span>Edit </span></a>
-            <a href="#" class="nb nbi nbsb4"><i class="fa fa-times"></i> <span>Delete </span></a>
-            <a class="nb nb-main"> + </i><span>Add a bus</span></a>
+            <a href="#" class="nb nbi nbsb1" id="editBusButton"><i class="fa fa-pencil"></i> <span>Edit Settings </span></a>
+            <a href="#" class="nb nbi nbsb2" id="deleteBusButton"><i class="fa fa-times"></i> <span>Delete A Bus </span></a>
+            <a class="nb nb-main" id="addBusButton"> <i class="fa fa-plus"></i><span>Add A Bus </span></a>
         </div>
-        <a id="deleteBusButton" href="#">Delete<i class="fa fa-2x fa-times"></i></a>
-        <a id="editBusButton" href="#">Edit<i class="fa fa-2x fa-pencil"></i></a>
-        <a id="addBusButton" href="#">Home<i class="fa fa-2x fa-home"></i></a>
+        <div class="home">
+            <a href="#" class="nb nb-main" id="backToAdminHome"><i class="fa fa-home"></i> <span>Back to Admin Home </span></a>
+        </div>
     </div>
 </div>
 

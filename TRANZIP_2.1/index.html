@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>tranzip | Home</title>
+    <title>tranzip</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -31,7 +31,7 @@
     </div>
     <div class="navBrand col-xs-8">
         <a href="index.html">
-            <img alt="tranzip Brand" src="img/tranzipNavLogo.png">
+            <img id="homepageLogo" alt="tranzip Brand" src="img/tranzipNavLogo.png">
         </a>
     </div>
     <div class="col-xs-2">
@@ -48,28 +48,19 @@
 <div id="googlemaps"></div>
 
 
-<div class="container" id="headerwrap">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+<div id="headerwrap">
+        <div id="landingContainer" class="col-md-8 col-md-offset-2">
 
-            <div>
+            <img src="img/Bus1.png">
 
-                <img src="img/tranzipLogo.png">
-
-                <div class="container-fluid">
-                    <form class="form" id="form" role="search">
-                        <div class="navSearch input-group">
-                            <input type="text" id="search" class="form-control" placeholder="Type in your address here...">
-                            <i class="searchButton fa fa-lg fa-search"></i>
-                        </div>
-                    </form>
+            <form class="form" role="search">
+                <div id="landingSearchContainer">
+                    <input type="text" id="search" class="form-control" placeholder="Type in your address here...">
+                    <i class="searchButton fa fa-lg fa-search"></i>
                 </div>
-
-            </div>      <!-- col-lg-12 col-md-8 col-sm-6 col-xs-4 -->
-
+            </form>
 
         </div><! --/row definition -->
-    </div><! --/row -->
 </div><! --/container -->
 
 
@@ -148,7 +139,7 @@
 </div><! --/modal -->
 
 
-<div id="footer" class="navbar-fixed-bottom hidden-xs">
+<div id="footer" class="navbar-fixed-bottom">
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-3">
@@ -161,7 +152,6 @@
                     <li><a href="privacyPolicy.html" id="last">Privacy Policy</a></li>
                 </ul>
             </div>
-            <div class="col-sm-3"></div>
         </div>
     </div>
 </div>
